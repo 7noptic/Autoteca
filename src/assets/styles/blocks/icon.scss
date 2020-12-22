@@ -1,0 +1,16 @@
+.icon {
+  & svg path.c-t-r {
+    transition: $transition4;
+  }
+  & svg circle.c-t-b {
+    transition: $transition4;
+  }
+  &:hover {
+    & svg path.c-t-r {
+      fill: #D93732;
+    }
+    & svg circle.c-t-b {
+      fill: black;
+    }
+  }
+}

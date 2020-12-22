@@ -1,0 +1,27 @@
+.header-menu {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    font-size: 12px;
+    padding: 10px;
+    transition: $transition4;
+    border-radius: $radiusBtn;
+
+    &:hover {
+      background-color: $yellow;
+    }
+  }
+}
+
+@media (max-width: 1629px) {
+  .header-menu {
+    &__link {
+      font-size: 10px;
+    }
+  }
+}

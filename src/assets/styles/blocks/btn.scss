@@ -1,0 +1,36 @@
+.btn {
+  font-size: 12px;
+  font-weight: 800;
+  background-color: $yellow;
+  border-radius: $radiusBtn;
+  transition: $transition4;
+  text-transform: uppercase;
+
+  &-black{
+    background-color: #000;
+    font-size: 12px;
+    font-weight: 800;
+    border-radius: $radiusBtn;
+    transition: $transition4;
+    text-transform: uppercase;
+    &:hover {
+      background-color: $green;
+      color: white;
+      -webkit-box-shadow: 0px 0px 15px 10px rgba(39, 150, 157, 0.43);
+      -moz-box-shadow: 0px 0px 15px 10px rgba(39, 150, 157, 0.43);
+      box-shadow: 0px 0px 15px 10px rgba(39, 150, 157, 0.43);
+    }
+  }
+  &-red{
+    background-color: $red;
+    
+  }
+
+  &:hover {
+    background-color: $red;
+    color: white;
+    -webkit-box-shadow: 0px 0px 15px 10px rgba(217, 55, 50, 0.43);
+    -moz-box-shadow: 0px 0px 15px 10px rgba(217, 55, 50, 0.43);
+    box-shadow: 0px 0px 15px 10px rgba(217, 55, 50, 0.43);
+  }
+}

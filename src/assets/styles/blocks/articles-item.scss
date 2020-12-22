@@ -1,0 +1,26 @@
+.articles-item{
+  width: 95%;
+  margin: 0 auto;
+  padding-bottom: 32px;
+  &__img{
+    padding-bottom: 15px;
+  }
+  &__date{
+    font-size: 12px;
+  }
+  &__title{
+    padding-top: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 10px;
+  }
+  &__text{
+    font-size: 14px;
+    font-weight: 300;
+    padding-bottom: 20px;
+  }
+  &__btn{
+    min-height: 40px;
+    padding: 6px 36px;
+  }
+}

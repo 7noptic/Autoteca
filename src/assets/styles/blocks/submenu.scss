@@ -1,0 +1,35 @@
+.submenu{
+  &__list{
+    background-color: #fff;
+  }
+
+  &-item{
+    display: none;
+    &-active{
+      display: flex;
+    }
+
+  }
+
+  &__item{
+    padding: 12px 30px;
+
+
+  }
+  &__link{
+    transition: $transition4;
+    font-weight: 400;
+    opacity: .6;
+    &-active{
+      font-weight: 600;
+      opacity: 1;
+    }
+    &:hover{
+      opacity: .9;
+    }
+  }
+}
+ul.submenu__list{
+  padding-top: 30px;
+
+}

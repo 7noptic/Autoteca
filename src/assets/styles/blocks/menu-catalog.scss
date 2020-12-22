@@ -1,0 +1,65 @@
+.menu-catalog {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  margin-left: 0;
+  overflow: auto;
+  transition: $transition4;
+  z-index: 10;
+  display: none;
+  &-active{
+    display: block;
+  }
+&__wrapper{
+  height: 100%;
+  display: flex;
+
+}
+  &__nav{
+    width: 320px;
+    padding: 30px;
+
+    background-color: $green;
+
+  }
+  &__item {
+    padding: 12px 0;
+    cursor: pointer;
+    & path{
+      transition: $transition4;
+    }
+    &:hover{
+      & a{
+        color: black;
+      }
+      & path{
+        fill: black;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    transition: $transition4;
+    opacity: .6;
+    &-active{
+      opacity: 1;
+      display: block;
+      font-weight: 600;
+      position: relative;
+      &::after{
+        content: url("../img/left-arrow.svg");
+        display: block;
+        position: absolute;
+        top: 7px;
+        right: 0;
+      }
+    }
+
+    & span {
+      margin-right: 30px;
+    }
+  }
+}

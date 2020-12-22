@@ -1,0 +1,20 @@
+.selection-form{
+  width: 100%;
+  padding: 30px;
+  background-color: $yellow;
+  display: flex;
+  border-radius: $radiusBtn;
+  margin-bottom: 60px;
+
+  &__btn{
+    color: #fff;
+    padding-left: 32px;
+    padding-right: 32px;
+    font-size: 12px;
+    font-weight: 800;
+    &:hover{
+      color: black;
+    }
+  }
+
+}

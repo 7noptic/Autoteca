@@ -1,0 +1,35 @@
+.advantage {
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 80px;
+  margin: 90px 0;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__img{
+    margin-bottom: 75px;
+  }
+  &__text{
+    word-wrap: break-word;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    padding: 0 50px;
+  }
+}
+@media (max-width: 1629px) {
+  .advantage {
+    padding: 80px 40px;
+
+    &__text{
+      font-size: 18px;
+      padding: 0 10px;
+    }
+  }
+}

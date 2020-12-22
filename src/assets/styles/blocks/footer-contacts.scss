@@ -1,0 +1,33 @@
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: -13px;
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  &__tel {
+    font-size: 40px;
+    font-weight: 800;
+    transition: $transition4;
+
+    &:hover {
+      color: #D93732;
+    }
+  }
+}
+
+@media (max-width: 1629px) {
+  .footer-contacts {
+    &__title {
+      font-size: 16px;
+    }
+
+    &__tel {
+      font-size: 30px;
+    }
+  }
+}

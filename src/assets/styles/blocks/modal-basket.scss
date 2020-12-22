@@ -1,0 +1,62 @@
+.modal-basket{
+  position: fixed;
+  top: 0;
+  height: 100%;
+  right: 0;
+  padding: 30px;
+  overflow: auto;
+  transition: $transition4;
+  z-index: 10;
+  display: none;
+  &-active{
+    display: block;
+  }
+  &__wrapper{
+    padding: 20px;
+    background-color: #fff;
+    border-radius: $radiusBtn;
+    width: 320px;
+    height: auto;
+    -webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
+  }
+  &__item{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    border: 1px solid #D0D0D0;
+    border-radius: $radiusBtn;
+    padding: 7px;
+    align-items: center;
+    margin-bottom: 10px;
+    transition: $transition4;
+    cursor: pointer;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+  &__img{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__exit{
+    z-index: 1000;
+    position: absolute;
+    top: 0px;
+    right: 4px;
+    cursor: pointer;
+      transition: $transition4;
+    &:hover{
+       color: $red;
+    }
+  }
+
+  &__btn{
+    width: 100%;
+    padding: 10px;
+  }
+
+}

@@ -1,0 +1,14 @@
+.social{
+  display: flex;
+  &__link{
+    cursor: pointer;
+    margin-left: 30px;
+    & path {
+      transition: $transition4;
+
+    }
+    &:hover path.c-t-y{
+      fill: $red;
+    }
+  }
+}

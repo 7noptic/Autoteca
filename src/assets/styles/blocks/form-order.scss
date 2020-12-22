@@ -1,0 +1,20 @@
+.form-order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__input{
+    width: 30%;
+  }
+  &__btn {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    width: 28%;
+
+  }
+}

@@ -1,0 +1,40 @@
+.header-form {
+  position: relative;
+  margin-left: 35px;
+
+  &__input {
+    background-color: #fafafa;
+    border-radius: $radiusBtn;
+    width: 333px;
+    padding: 7px 35px;
+    transition: $transition4;
+
+    &::placeholder {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14;
+    }
+    &:hover{
+      background-color: darken(#fafafa, 10%);
+    }
+    &:active,&:focus{
+      &::placeholder {
+        color: white;
+      }
+      background-color: $red;
+
+      color: white;
+      font-weight: 500;
+    }
+  }
+
+  &::before {
+    content: url("../img/search.svg");
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    left: 11px;
+  }
+}

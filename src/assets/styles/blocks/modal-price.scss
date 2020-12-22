@@ -1,0 +1,12 @@
+.modal-price{
+&__oldprice{
+  font-size: 10px;
+  font-weight: 600;
+  opacity: .6;
+  text-decoration: line-through;
+}
+  &__newprice{
+    font-size: 14px;
+    font-weight: 600;
+  }
+}

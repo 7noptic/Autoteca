@@ -1,0 +1,16 @@
+.price{
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 23px;
+  &__new{
+    font-size: 20px;
+    font-weight: 700;
+    padding-right: 15px;
+  }
+  &__old{
+    font-size: 14px;
+    font-weight: 600;
+    opacity: .6;
+    text-decoration: line-through;
+  }
+}

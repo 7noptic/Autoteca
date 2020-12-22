@@ -1,0 +1,38 @@
+.header {
+  &__top {
+    padding: 20px 5px;
+  }
+
+  &__bottom {
+    padding: 5px 5px 30px;
+  }
+
+  &__tel {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__number {
+    font-size: 18px;
+    font-weight: 700;
+    transition: $transition4;
+    &:hover {
+      color: $red;
+    }
+  }
+
+  &__order {
+    color: $red;
+    font-size: 12px;
+    font-weight: 800;
+    transition: $transition4;
+
+    &:hover {
+
+    }
+  }
+  &__btn{
+    padding: 7.5px 14px;
+    margin: 0 40px;
+  }
+}

@@ -1,0 +1,17 @@
+.footer-nav{
+  &__title{
+    font-weight: 700;
+    font-size: 20px;
+    padding-bottom: 30px;
+  }
+  &__item{
+    padding-bottom: 13px;
+  }
+  &__link{
+    font-size: 12px;
+    transition: $transition4;
+    &:hover{
+      color: $red;
+    }
+  }
+}

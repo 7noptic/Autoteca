@@ -1,0 +1,33 @@
+.icon-text {
+  display: flex;
+  align-items: center;
+&__pl{
+  padding-left: 55px;
+}
+  &__text {
+    padding-top: 2px;
+    padding-left: 7px;
+    font-size: 12px;
+  }
+
+  &__link {
+    transition: $transition4;
+
+    &:hover {
+      color: $red;
+    }
+  }
+}
+@media (max-width: 1629px) {
+  .icon-text {
+    &__pl{
+      padding-left: 20px;
+    }
+    &__text {
+      font-size: 10px;
+    }
+    &__link {
+      font-size: 10px;
+    }
+  }
+}

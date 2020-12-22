@@ -1,0 +1,30 @@
+.materials-item{
+  width: 94%;
+  margin: 0 auto 40px;
+  border-radius: $radiusBtn;
+  &__img img{
+    border-top-left-radius: $radiusBtn;
+    border-top-right-radius: $radiusBtn;
+  }
+  &__description{
+    border-bottom: 1px solid #D8D8D8;
+    border-left: 1px solid #D8D8D8;
+    border-right: 1px solid #D8D8D8;
+    border-bottom-left-radius: $radiusBtn;
+    border-bottom-right-radius: $radiusBtn;
+    padding: 20px;
+  }
+  &__name{
+    font-weight: 600;
+    font-size: 16px;
+    padding-top: 19px;
+    padding-bottom: 14px;
+  }
+  &__text{
+    padding-bottom: 20px;
+  }
+  &__btn{
+    min-height: 40px;
+    width: 100%;
+  }
+}

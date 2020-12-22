@@ -1,0 +1,53 @@
+.card-bestseller{
+  width: 94%;
+  margin: 0 auto;
+  &__header{
+    border-top: 1px solid #D8D8D8;
+    border-left: 1px solid #D8D8D8;
+    border-right: 1px solid #D8D8D8;
+    border-top-left-radius: $radiusBtn;
+    border-top-right-radius: $radiusBtn;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 300;
+  }
+  &__rating{
+    padding-bottom: 20px;
+  }
+  &__desc{
+    border-bottom: 1px solid #D8D8D8;
+    border-left: 1px solid #D8D8D8;
+    border-right: 1px solid #D8D8D8;
+    border-bottom-left-radius: $radiusBtn;
+    border-bottom-right-radius: $radiusBtn;
+    padding: 20px;
+  }
+  &__text{
+    font-size: 14px;
+    font-weight: 300;
+    padding-bottom: 10px;
+  }
+  &__presence{
+    color: #52820F;
+    font-size: 12px;
+    font-weight: 800;
+    padding-bottom: 20px;
+  }
+  &__reviews{
+    font-size: 14px;
+    font-weight: 300;
+  }
+  &__btn{
+    min-height: 40px;
+    width: 90%;
+    &-b{
+      max-height: 40px;
+      padding: 4px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}
