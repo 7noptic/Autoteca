@@ -1,6 +1,7 @@
 'use script';
 import $ from 'jquery';
 import Swiper from 'swiper';
+
 window.addEventListener('DOMContentLoaded', () => {
     const bestsellerTabsParent = document.querySelector('.bestseller'),
         catalogBtn = document.querySelector('#catalogBtn'),
@@ -125,9 +126,9 @@ window.addEventListener('DOMContentLoaded', () => {
                     console.log(item);
                     if (target == item) {
                         basketItem[i].classList.add('animationHide');
-                        setTimeout(()=>{
+                        setTimeout(() => {
                             basketItem[i].parentNode.removeChild(basketItem[i]);
-                        },500);
+                        }, 500);
 
                     }
                 });
@@ -139,7 +140,16 @@ window.addEventListener('DOMContentLoaded', () => {
                 modalBuy.classList.remove('modal-buy-active');
             }, 500);
         });
-
+        window.addEventListener("keydown", function(e) {
+            if (e.code = 'Escape' && modalBuy.classList.contains('modal-buy-active')) {
+                console.log('я работаю с нихуя');
+                modalBuy.classList.add('animationHide');
+                modalBuy.classList.remove('animationShow');
+                setTimeout(() => {
+                    modalBuy.classList.remove('modal-buy-active');
+                }, 500);
+            }
+        });
     });
 
     /* ДОБАВИТЬ В КОРЗИНУ */
@@ -173,6 +183,7 @@ window.addEventListener('DOMContentLoaded', () => {
         content[i].classList.add(contentClass, 'animationShow');
         link[i].classList.add(linkClass, 'animationShow');
     }
+
     let swiper = new Swiper('.swiper-container', {
         slidesPerView: 10,
         loop: true,
@@ -185,4 +196,60 @@ window.addEventListener('DOMContentLoaded', () => {
         },
 
     });
+
+    /*МОДАЛЬНОЕ ОКНО
+
+    const modalTrigger = document.querySelectorAll('[data-modal]'),
+        modal = document.querySelector('.modal'),
+        modalCloseBtn = document.querySelector('[data-close]');
+
+    modalTrigger.forEach(btn => {
+        btn.addEventListener('click', () => {
+            openModal();
+        })
+    });
+
+    modalCloseBtn.addEventListener('click', () => {
+        closeModal();
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.code = 'Escape' && modal.classList.contains('modal-buy-active')) {
+            modalBuy.classList.add('animationHide');
+            modalBuy.classList.remove('animationShow');
+            setTimeout(() => {
+                modalBuy.classList.remove('modal-buy-active');
+            }, 500);
+        }
+    });
+
+    function openModal() {
+        modal.classList.toggle('show');
+        document.body.style.overflow = 'hidden';
+        clearInterval(modalTimerId);
+    }
+
+    function closeModal() {
+        modal.classList.toggle('show');
+        document.body.style.overflow = 'scroll';
+    };
+
+
+//const modalTimerId = setTimeout(openModal, 3000);
+
+
+    function showModalByScroll() {
+        if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+            openModal();
+            window.removeEventListener('scroll', showModalByScroll);
+        }
+    }
+
+    window.addEventListener('scroll', showModalByScroll);*/
 });
