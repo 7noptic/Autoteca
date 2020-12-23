@@ -36,3 +36,14 @@
     margin: 0 40px;
   }
 }
+@media (max-width: 1200px) {
+  .header {
+    &__number {
+      font-size: 14px;
+    }
+    &__order{
+      font-size: 10px;
+    }
+  }
+}
+

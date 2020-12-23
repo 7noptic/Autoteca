@@ -25,3 +25,17 @@
     }
   }
 }
+@media (max-width: 1279px) {
+  .header-menu {
+    &__link {
+      padding: 5px;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .header-menu {
+    &__link {
+      font-size: 8px;
+    }
+  }
+}

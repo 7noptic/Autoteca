@@ -1,11 +1,17 @@
 .submenu-content {
+
   display: none;
   background-color: #fafafa;
   margin-left: -1px;
   &-active{
     display: flex;
   }
+  &__text{
+    padding: 42px 30px;
+    width: 50%;
+  }
   &__img{
+    width: 50%;
     background-color: #fff;
     display: flex;
     justify-content: center;

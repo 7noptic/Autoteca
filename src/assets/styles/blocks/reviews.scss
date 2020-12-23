@@ -1,9 +1,6 @@
 .reviews{
   &__item{
-    display: none;
-    &-active{
-      display: flex;
-    }
+    display: flex;
   }
   &__sort {
     font-weight: 700;

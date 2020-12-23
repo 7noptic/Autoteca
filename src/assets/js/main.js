@@ -1,6 +1,12 @@
 'use script';
+
+import jQuery from 'jquery';
 import $ from 'jquery';
-import Swiper from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
+import MatchHeight from 'matchheight';
+
+// configure Swiper to use modules
+Swiper.use([Navigation, Pagination]);
 
 window.addEventListener('DOMContentLoaded', () => {
     const bestsellerTabsParent = document.querySelector('.bestseller'),
@@ -8,20 +14,15 @@ window.addEventListener('DOMContentLoaded', () => {
         articlesTabsParent = document.querySelector('.articles'),
         reviewsTabsParent = document.querySelector('.reviews'),
         buyOneClickBtn = document.querySelectorAll('.js-buy-one-click');
-    /* КАТАЛОГ ТОВАРОВ */
+
+     /* КАТАЛОГ ТОВАРОВ */
     if (catalogBtn) {
         catalogBtn.addEventListener('click', () => {
             const catalogContent = document.querySelector('.menu-catalog');
             if (!catalogContent.classList.contains('menu-catalog-active')) {
                 catalogContent.classList.add('menu-catalog-active');
-                catalogContent.classList.add('animationShow');
-                catalogContent.classList.remove('animationHide');
             } else {
-                catalogContent.classList.remove('animationShow');
-                catalogContent.classList.add('animationHide');
-                setTimeout(() => {
                     catalogContent.classList.remove('menu-catalog-active');
-                }, 500);
             }
 
             catalogContent.addEventListener('click', (event) => {
@@ -41,7 +42,6 @@ window.addEventListener('DOMContentLoaded', () => {
                         }
                     });
                     menuLink.forEach((item, i) => {
-
                         if (target == item) {
                             hideTabsContent(submenu, "submenu-item-active", menuLink, 'menu-catalog__link-active');
                             showTabsContent(i, submenu, "submenu-item-active", menuLink, 'menu-catalog__link-active');
@@ -66,7 +66,7 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-    /* ТАБЫ */
+    /* ТАБЫ
     if (bestsellerTabsParent) {
         const bestsellerTabs = document.querySelectorAll('.bestseller__sort'),
             bestsellerTabsContent = document.querySelectorAll('.bestseller__item');
@@ -101,29 +101,26 @@ window.addEventListener('DOMContentLoaded', () => {
 
             showHideTabs(event, 0, reviewsTabsContent, 'reviews__item-active', reviewsTabs, 'reviews__sort-active', 'reviews__sort');
         });
-    }
-    /* КУПИТЬ В 1 КЛИК */
+    }*/
+    /* МОДАЛКИ */
     document.addEventListener('click', (event) => {
         const target = event.target,
             modalBuy = document.querySelector('.modal-buy'),
             modalBasket = document.querySelector('.modal-basket'),
             exitBuy = document.querySelector('.modal-buy__exit'),
-            exitBasket = document.querySelectorAll('.modal-basket__exit'),
-            basketItem = document.querySelectorAll('.modal-basket__item');
+            exitBasket = document.querySelectorAll('.modal-basket__exit');
+
+        let basketItem = document.querySelectorAll('.modal-basket__item');
 
         if (target && target.classList.contains('js-buy-one-click')) {
-            modalBuy.classList.remove('animationHide');
-            modalBuy.classList.add('modal-buy-active', 'animationShow');
+            openModal(modalBuy, 'modal-buy-active');
         } else if (target && target.classList.contains('js-add-to-basket')) {
-            modalBasket.classList.remove('animationHide');
-            modalBasket.classList.add('modal-buy-active', 'animationShow');
+            openModal(modalBasket, 'modal-basket-active');
         }
         modalBasket.addEventListener('click', (event) => {
             const target = event.target;
-            console.log(target);
             if (target && target.classList.contains('modal-basket__exit'))
                 exitBasket.forEach((item, i) => {
-                    console.log(item);
                     if (target == item) {
                         basketItem[i].classList.add('animationHide');
                         setTimeout(() => {
@@ -134,22 +131,23 @@ window.addEventListener('DOMContentLoaded', () => {
                 });
         });
         exitBuy.addEventListener('click', () => {
-            modalBuy.classList.add('animationHide');
-            modalBuy.classList.remove('animationShow');
+            closeModal(modalBuy, 'modal-buy-active');
+        });
+
+        function openModal(modal, classActive) {
+            modal.classList.remove('animationHide');
+            modal.classList.add(classActive, 'animationShow');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modal, classActive) {
+            modal.classList.add('animationHide');
+            modal.classList.remove('animationShow');
             setTimeout(() => {
-                modalBuy.classList.remove('modal-buy-active');
+                modal.classList.remove(classActive);
             }, 500);
-        });
-        window.addEventListener("keydown", function(e) {
-            if (e.code = 'Escape' && modalBuy.classList.contains('modal-buy-active')) {
-                console.log('я работаю с нихуя');
-                modalBuy.classList.add('animationHide');
-                modalBuy.classList.remove('animationShow');
-                setTimeout(() => {
-                    modalBuy.classList.remove('modal-buy-active');
-                }, 500);
-            }
-        });
+            document.body.style.overflow = 'scroll';
+        };
     });
 
     /* ДОБАВИТЬ В КОРЗИНУ */
@@ -186,6 +184,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let swiper = new Swiper('.swiper-container', {
         slidesPerView: 10,
+        slidesPerGroup: 2,
         loop: true,
         spaceBetween: 20,
         allowSlidePrev: true,
@@ -196,6 +195,153 @@ window.addEventListener('DOMContentLoaded', () => {
         },
 
     });
+    let swiper2 = new Swiper('.swiper-container2', {
+        slidesPerView: 4,
+        loop: false,
+        spaceBetween: 0,
+        //Инициализация в табах
+        observer: true,
+        observeParents: true,
+
+        // Responsive breakpoints
+       breakpoints: {
+
+            // when window width is <= 320px
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 0
+            },
+            // when window width is <= 480px
+           992: {
+                slidesPerView: 2,
+                spaceBetween: 0
+            },
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 0
+            },
+            // when window width is <= 640px
+            1630: {
+                slidesPerView: 4,
+                spaceBetween: 0
+            }
+
+    }
+
+    });
+    let swiper3 = new Swiper('.swiper-container3', {
+        slidesPerView: 4,
+        slidesPerColumn: 2,
+        loop: false,
+        spaceBetween: 0,
+        observer: true,
+        observeParents: true,
+        // Responsive breakpoints
+        breakpoints: {
+
+            // when window width is <= 320px
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                slidesPerColumn: 1,
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 0,
+                slidesPerColumn: 1,
+            },
+            // when window width is <= 480px
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 0,
+                slidesPerColumn: 2,
+            },
+            1200: {
+                slidesPerView: 4,
+                spaceBetween: 0
+            },
+            // when window width is <= 640px
+
+
+        }
+
+    });
+    let swiper4 = new Swiper('.swiper-container4', {
+        slidesPerView: 3,
+        loop: false,
+        spaceBetween: 0,
+        //Инициализация в табах
+        observer: true,
+        observeParents: true,
+
+        // Responsive breakpoints
+        breakpoints: {
+
+            // when window width is <= 320px
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 0
+            },
+            // when window width is <= 480px
+            992: {
+                slidesPerView: 2,
+                spaceBetween: 0
+            },
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 0
+            },
+
+
+        }
+
+    });
+    let swiper5 = new Swiper('.swiper-container5', {
+        slidesPerView: 2,
+        loop: false,
+        spaceBetween: 0,
+        //Инициализация в табах
+        observer: true,
+        observeParents: true,
+
+        // Responsive breakpoints
+        breakpoints: {
+
+            // when window width is <= 320px
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 0
+            },
+            // when window width is <= 480px
+            992: {
+                slidesPerView: 2,
+                spaceBetween: 0
+            },
+        }
+    });
+
+
+    /* СЛАЙДЕРЫ
+             let mySwiper = new Swiper('.swiper-container', {
+                 navigation: {
+                     nextEl: '.swiper-button-next',
+                     prevEl: '.swiper-button-prev'
+                 },
+                 nextButton: '.swiper-button-next',
+                 prevButton: '.swiper-button-prev',
+                 paginationClickable: true,
+                 loop: true,
+                 spaceBetween: 20,
+                 observer: true ,
+                 observeParents: true,
+                 autoplay: {
+                     delay: 5000,
+                 },
+
+                 paginationType: "custom",
+                 slidesPerView: 'auto',
+             });*/
+
 
     /*МОДАЛЬНОЕ ОКНО
 
@@ -218,7 +364,7 @@ window.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
-
+/*
     document.addEventListener('keydown', (e) => {
         if (e.code = 'Escape' && modal.classList.contains('modal-buy-active')) {
             modalBuy.classList.add('animationHide');
@@ -232,7 +378,6 @@ window.addEventListener('DOMContentLoaded', () => {
     function openModal() {
         modal.classList.toggle('show');
         document.body.style.overflow = 'hidden';
-        clearInterval(modalTimerId);
     }
 
     function closeModal() {
@@ -241,7 +386,7 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
 
-//const modalTimerId = setTimeout(openModal, 3000);
+
 
 
     function showModalByScroll() {

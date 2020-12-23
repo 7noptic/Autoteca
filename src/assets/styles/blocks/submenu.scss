@@ -1,6 +1,8 @@
 .submenu{
+  display: flex;
   &__list{
     background-color: #fff;
+    min-width: 280px;
   }
 
   &-item{

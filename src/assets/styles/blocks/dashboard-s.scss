@@ -29,8 +29,25 @@
 }
 @media (max-width: 1629px) {
   .dashboard-s{
+
     &__title {
-      font-size: 22px;
+      font-size: 24px;
+    }
+  }
+}
+@media (max-width: 1279px) {
+  .dashboard-s{
+    padding: 30px;
+    &__title {
+      font-size: 20px;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .dashboard-s{
+    padding: 20px;
+    &__title {
+      font-size: 18px;
     }
   }
 }

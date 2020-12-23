@@ -5,7 +5,7 @@
   margin-left: 0;
   overflow: auto;
   transition: $transition4;
-  z-index: 10;
+  z-index: 100;
   display: none;
   &-active{
     display: block;

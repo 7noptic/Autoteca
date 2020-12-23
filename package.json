@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "del-cli dist cross-env NODE_ENV=development webpack --mode development",
-    "build": "del-cli dist cross-env NODE_ENV=production webpack --mode production && html dist/*.html --indent-size 2",
+    "build": "del-cli dist && cross-env NODE_ENV=production webpack --mode production && html dist/*.html --indent-size 2",
     "watch": "del-cli dist cross-env NODE_ENV=development webpack --mode development --watch",
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
     "build-and-beautify": "del-cli dist && webpack --mode production && html dist/*.html --indent-size 2",
@@ -39,6 +39,7 @@
     "less": "^3.12.2",
     "less-loader": "^7.0.1",
     "lodash": "^4.17.20",
+    "matchheight": "^0.1.2",
     "mini-css-extract-plugin": "^0.11.1",
     "node-sass": "^4.14.1",
     "optimize-css-assets-webpack-plugin": "^5.0.4",

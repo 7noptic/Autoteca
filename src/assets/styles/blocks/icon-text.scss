@@ -1,9 +1,11 @@
 .icon-text {
   display: flex;
   align-items: center;
-&__pl{
-  padding-left: 55px;
-}
+
+  &__pl {
+    padding-left: 55px;
+  }
+
   &__text {
     padding-top: 2px;
     padding-left: 7px;
@@ -18,16 +20,39 @@
     }
   }
 }
+
 @media (max-width: 1629px) {
   .icon-text {
-    &__pl{
+    &__pl {
       padding-left: 20px;
     }
+
     &__text {
       font-size: 10px;
     }
+
     &__link {
       font-size: 10px;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .icon-text {
+    &__img svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .icon-text {
+
+      &__text {
+        font-size: 8px;
+      }
+
+      &__link {
+        font-size: 8px;
+      }
     }
   }
 }

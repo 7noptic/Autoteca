@@ -1,6 +1,7 @@
 .card-bestseller{
   width: 94%;
   margin: 0 auto;
+  max-width: 376px;
   &__header{
     border-top: 1px solid #D8D8D8;
     border-left: 1px solid #D8D8D8;
@@ -48,6 +49,13 @@
       padding: 4px;
       width: 100%;
       margin: 0 auto;
+    }
+  }
+}
+@media (max-width: 1279px) {
+  .card-bestseller{
+    &__reviews{
+      font-size: 12px;
     }
   }
 }

@@ -43,3 +43,29 @@
     }
   }
 }
+@media (max-width: 1279px) {
+  .bigdashboard-m{
+    &__title{
+      font-size: 34px;
+    }
+    &__subtitle{
+      font-size: 16px;
+    }
+      & span{
+        font-size: 88px;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .bigdashboard-m{
+    &__title{
+      font-size: 29px;
+    }
+    &__subtitle{
+      font-size: 14px;
+    }
+    & span{
+      font-size: 70px;
+    }
+  }
+}

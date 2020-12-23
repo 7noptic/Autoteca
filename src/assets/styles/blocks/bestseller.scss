@@ -5,6 +5,7 @@
     margin-right: 150px;
     opacity: .35;
     transition: $transition4;
+    border-bottom: 2px dashed transparent;
 
     &:hover {
       opacity: .6;
@@ -16,19 +17,33 @@
     }
   }
 
-
-  &__item {
-    display: none;
-    &-active {
-      display: flex;
-    }
-  }
+}
+.nav-link.bestseller__sort{
+  padding: 0;
+}
+.nav-link.bestseller__sort.active{
+  opacity: 1;
+  border-bottom: 2px dashed #000000;
 }
 
 @media (max-width: 1629px) {
   .bestseller{
     &__sort{
       margin-right: 100px;
+    }
+  }
+}
+@media (max-width: 1279px) {
+  .bestseller{
+    &__sort{
+      margin-right: 50px;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .bestseller{
+    &__sort{
+      font-size: 16px;
     }
   }
 }

@@ -18,6 +18,8 @@
   }
   &__name{
     margin-bottom: 30px;
+    text-align: center;
+    font-size: 14px;
   }
   &__btn{
     width: 100px;
@@ -28,6 +30,24 @@
     font-weight: 800;
     &:hover{
       color: black;
+    }
+  }
+}
+@media screen and(min-width: 1200px) and (max-width: 1280px){
+  .mark-item{
+    &__img svg{
+      width: 80px;
+      height: 80px;
+    }
+    &__name{
+      font-size: 12px;
+    }
+  }
+}
+@media screen and(max-width: 1200px) and (max-width: 1280px){
+  .mark-item{
+    &__name{
+      margin-bottom: 15px;
     }
   }
 }
