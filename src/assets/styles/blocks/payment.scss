@@ -1,0 +1,28 @@
+.payment {
+  &__item {
+    display: flex;
+
+    padding-bottom: 60px;
+  }
+
+  &__img {
+    display: flex;
+
+    justify-content: center;
+  }
+
+  &__descr {
+    padding-left: 60px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 7px 0;
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 14px;
+  }
+}

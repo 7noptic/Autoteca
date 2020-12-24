@@ -7,15 +7,15 @@
     display: flex;
     font-weight: 600;
     font-size: 15px;
-
   }
   &__list{
   }
   &__item{
     padding: 0 10px 15px;
+    margin-right: 40px;
+    width: 100%;
   }
   &__link{
-    margin-right: 40px;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 300;

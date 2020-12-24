@@ -25,10 +25,12 @@
   &__video{
     padding: 15px;
     cursor: pointer;
-    transition: $transition4;
-    border-radius: $radiusBtn;
-    &:hover{
-      transform: scale(1.1);
+    & img{
+      transition: $transition4;
+      border-radius: $radiusBtn;
+      &:hover{
+        transform: scale(1.05);
+      }
     }
   }
 }

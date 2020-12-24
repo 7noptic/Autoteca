@@ -1,0 +1,53 @@
+.how-order {
+  &__item {
+    padding: 0 15px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 16px;
+    padding-bottom: 20px;
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 14px;
+    padding-bottom: 30px;
+  }
+
+  &__img {
+    padding-bottom: 50px;
+  }
+
+  &__form {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__input {
+    width: 24%;
+    border: 2px solid #000;
+    margin-left: 20px;
+    margin-left: 0;
+
+    &:hover, &:active, &:focus {
+      border: 2px solid #000;
+
+    }
+  }
+
+  &__btn {
+    width: 20%;
+    height: 40px;
+    color: #ffffff;
+  }
+
+  &__agreement {
+    width: 24%;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 14px;
+  }
+}

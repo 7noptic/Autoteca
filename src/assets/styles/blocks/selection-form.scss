@@ -18,3 +18,30 @@
   }
 
 }
+@media screen and (max-width: 1200px){
+  .selection-form{
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    &__select{
+      width: 40%;
+      margin-bottom: 15px;
+      max-width: 40%;
+      margin-right: 0;
+    }
+    &__btn{
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+}
+@media screen and (max-width: 991px){
+  .selection-form{
+    flex-direction: column;
+    &__select{
+      width: 100%;
+      margin-bottom: 15px;
+      max-width: 100%;
+    }
+  }
+}

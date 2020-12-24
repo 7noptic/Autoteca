@@ -2,9 +2,7 @@
 
 import jQuery from 'jquery';
 import $ from 'jquery';
-import Swiper, { Navigation, Pagination } from 'swiper';
-import MatchHeight from 'matchheight';
-
+import Swiper, {Navigation, Pagination} from 'swiper';
 // configure Swiper to use modules
 Swiper.use([Navigation, Pagination]);
 
@@ -14,15 +12,25 @@ window.addEventListener('DOMContentLoaded', () => {
         articlesTabsParent = document.querySelector('.articles'),
         reviewsTabsParent = document.querySelector('.reviews'),
         buyOneClickBtn = document.querySelectorAll('.js-buy-one-click');
+    const catalogContent = document.querySelector('.menu-catalog');
 
-     /* КАТАЛОГ ТОВАРОВ */
+    document.addEventListener('click', (event) => {
+        const target = event.target;
+        if (catalogContent.classList.contains('menu-catalog-active')) ;
+        {
+
+        }
+
+
+    });
+    /* КАТАЛОГ ТОВАРОВ */
     if (catalogBtn) {
         catalogBtn.addEventListener('click', () => {
-            const catalogContent = document.querySelector('.menu-catalog');
             if (!catalogContent.classList.contains('menu-catalog-active')) {
                 catalogContent.classList.add('menu-catalog-active');
+
             } else {
-                    catalogContent.classList.remove('menu-catalog-active');
+                catalogContent.classList.remove('menu-catalog-active');
             }
 
             catalogContent.addEventListener('click', (event) => {
@@ -66,42 +74,7 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-    /* ТАБЫ
-    if (bestsellerTabsParent) {
-        const bestsellerTabs = document.querySelectorAll('.bestseller__sort'),
-            bestsellerTabsContent = document.querySelectorAll('.bestseller__item');
 
-        hideTabsContent(bestsellerTabsContent, 'bestseller__item-active', bestsellerTabs, 'bestseller__sort-active');
-        showTabsContent(0, bestsellerTabsContent, 'bestseller__item-active', bestsellerTabs, 'bestseller__sort-active');
-
-        bestsellerTabsParent.addEventListener('click', (event) => {
-            event.preventDefault();
-            showHideTabs(event, 0, bestsellerTabsContent, 'bestseller__item-active', bestsellerTabs, 'bestseller__sort-active', 'bestseller__sort');
-        });
-    }
-    if (articlesTabsParent) {
-        const articlesTabsContent = document.querySelectorAll('.articles__item'),
-            articlesTabs = document.querySelectorAll('.articles__sort');
-
-        hideTabsContent(articlesTabsContent, 'articles__item-active', articlesTabs, 'articles__sort-active');
-        showTabsContent(0, articlesTabsContent, 'articles__item-active', articlesTabs, 'articles__sort-active');
-        articlesTabsParent.addEventListener('click', (event) => {
-            event.preventDefault();
-            showHideTabs(event, 0, articlesTabsContent, 'articles__item-active', articlesTabs, 'articles__sort-active', 'articles__sort');
-        });
-    }
-    if (reviewsTabsParent) {
-        const reviewsTabsContent = document.querySelectorAll('.reviews__item'),
-            reviewsTabs = document.querySelectorAll('.reviews__sort');
-
-        hideTabsContent(reviewsTabsContent, 'reviews__item-active', reviewsTabs, 'reviews__sort-active');
-        showTabsContent(0, reviewsTabsContent, 'reviews__item-active', reviewsTabs, 'reviews__sort-active');
-        reviewsTabsParent.addEventListener('click', (event) => {
-            event.preventDefault();
-
-            showHideTabs(event, 0, reviewsTabsContent, 'reviews__item-active', reviewsTabs, 'reviews__sort-active', 'reviews__sort');
-        });
-    }*/
     /* МОДАЛКИ */
     document.addEventListener('click', (event) => {
         const target = event.target,
@@ -117,22 +90,27 @@ window.addEventListener('DOMContentLoaded', () => {
         } else if (target && target.classList.contains('js-add-to-basket')) {
             openModal(modalBasket, 'modal-basket-active');
         }
-        modalBasket.addEventListener('click', (event) => {
-            const target = event.target;
-            if (target && target.classList.contains('modal-basket__exit'))
-                exitBasket.forEach((item, i) => {
-                    if (target == item) {
-                        basketItem[i].classList.add('animationHide');
-                        setTimeout(() => {
-                            basketItem[i].parentNode.removeChild(basketItem[i]);
-                        }, 500);
+        if (modalBasket) {
+            modalBasket.addEventListener('click', (event) => {
+                const target = event.target;
+                if (target && target.classList.contains('modal-basket__exit'))
+                    exitBasket.forEach((item, i) => {
+                        if (target == item) {
+                            basketItem[i].classList.add('animationHide');
+                            setTimeout(() => {
+                                basketItem[i].parentNode.removeChild(basketItem[i]);
+                            }, 500);
 
-                    }
-                });
-        });
-        exitBuy.addEventListener('click', () => {
-            closeModal(modalBuy, 'modal-buy-active');
-        });
+                        }
+                    });
+            });
+        }
+        if (exitBuy) {
+            exitBuy.addEventListener('click', () => {
+                closeModal(modalBuy, 'modal-buy-active');
+            });
+        }
+
 
         function openModal(modal, classActive) {
             modal.classList.remove('animationHide');
@@ -202,9 +180,12 @@ window.addEventListener('DOMContentLoaded', () => {
         //Инициализация в табах
         observer: true,
         observeParents: true,
-
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
         // Responsive breakpoints
-       breakpoints: {
+        breakpoints: {
 
             // when window width is <= 320px
             0: {
@@ -212,7 +193,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 spaceBetween: 0
             },
             // when window width is <= 480px
-           992: {
+            992: {
                 slidesPerView: 2,
                 spaceBetween: 0
             },
@@ -226,7 +207,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 spaceBetween: 0
             }
 
-    }
+        }
 
     });
     let swiper3 = new Swiper('.swiper-container3', {
@@ -273,7 +254,10 @@ window.addEventListener('DOMContentLoaded', () => {
         //Инициализация в табах
         observer: true,
         observeParents: true,
-
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
         // Responsive breakpoints
         breakpoints: {
 
@@ -303,7 +287,10 @@ window.addEventListener('DOMContentLoaded', () => {
         //Инициализация в табах
         observer: true,
         observeParents: true,
-
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
         // Responsive breakpoints
         breakpoints: {
 
@@ -319,7 +306,45 @@ window.addEventListener('DOMContentLoaded', () => {
             },
         }
     });
+    let swiper6 = new Swiper('.swiper-container6', {
+        slidesPerView: 2,
+        slidesPerColumn: 2,
+        loop: false,
+        spaceBetween: 0,
+        observer: true,
+        observeParents: true,
+        // Responsive breakpoints
+        breakpoints: {
 
+            // when window width is <= 320px
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                slidesPerColumn: 1,
+            },
+            576: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                slidesPerColumn: 1,
+            },
+            768: {
+                slidesPerView: 1.5,
+                spaceBetween: 0,
+                slidesPerColumn: 1,
+            },
+            // when window width is <= 480px
+            992: {
+                slidesPerView: 2,
+                spaceBetween: 0,
+                slidesPerColumn: 2,
+            },
+
+            // when window width is <= 640px
+
+
+        }
+
+    });
 
     /* СЛАЙДЕРЫ
              let mySwiper = new Swiper('.swiper-container', {
@@ -397,4 +422,40 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('scroll', showModalByScroll);*/
+    /* ТАБЫ
+if (bestsellerTabsParent) {
+    const bestsellerTabs = document.querySelectorAll('.bestseller__sort'),
+        bestsellerTabsContent = document.querySelectorAll('.bestseller__item');
+
+    hideTabsContent(bestsellerTabsContent, 'bestseller__item-active', bestsellerTabs, 'bestseller__sort-active');
+    showTabsContent(0, bestsellerTabsContent, 'bestseller__item-active', bestsellerTabs, 'bestseller__sort-active');
+
+    bestsellerTabsParent.addEventListener('click', (event) => {
+        event.preventDefault();
+        showHideTabs(event, 0, bestsellerTabsContent, 'bestseller__item-active', bestsellerTabs, 'bestseller__sort-active', 'bestseller__sort');
+    });
+}
+if (articlesTabsParent) {
+    const articlesTabsContent = document.querySelectorAll('.articles__item'),
+        articlesTabs = document.querySelectorAll('.articles__sort');
+
+    hideTabsContent(articlesTabsContent, 'articles__item-active', articlesTabs, 'articles__sort-active');
+    showTabsContent(0, articlesTabsContent, 'articles__item-active', articlesTabs, 'articles__sort-active');
+    articlesTabsParent.addEventListener('click', (event) => {
+        event.preventDefault();
+        showHideTabs(event, 0, articlesTabsContent, 'articles__item-active', articlesTabs, 'articles__sort-active', 'articles__sort');
+    });
+}
+if (reviewsTabsParent) {
+    const reviewsTabsContent = document.querySelectorAll('.reviews__item'),
+        reviewsTabs = document.querySelectorAll('.reviews__sort');
+
+    hideTabsContent(reviewsTabsContent, 'reviews__item-active', reviewsTabs, 'reviews__sort-active');
+    showTabsContent(0, reviewsTabsContent, 'reviews__item-active', reviewsTabs, 'reviews__sort-active');
+    reviewsTabsParent.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        showHideTabs(event, 0, reviewsTabsContent, 'reviews__item-active', reviewsTabs, 'reviews__sort-active', 'reviews__sort');
+    });
+}*/
 });

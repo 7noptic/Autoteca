@@ -5,6 +5,9 @@
   border-radius: $radiusBtn;
   transition: $transition4;
   text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &-black{
     background-color: #000;
@@ -13,6 +16,9 @@
     border-radius: $radiusBtn;
     transition: $transition4;
     text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &:hover {
       background-color: $green;
       color: white;
@@ -23,7 +29,9 @@
   }
   &-red{
     background-color: $red;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &:hover {

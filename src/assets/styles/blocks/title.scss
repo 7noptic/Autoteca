@@ -1,10 +1,11 @@
-.title{
+.title {
   font-size: 40px;
   font-weight: 800;
   overflow: hidden;
   text-transform: uppercase;
   margin: 0 auto 30px;
   text-align: center;
+
   &:before,
   &:after {
     content: '';
@@ -16,11 +17,58 @@
     width: 100%;
     height: 27px;
   }
+
   &:before {
     margin-left: -100%;
   }
+
   &:after {
     margin-right: -100%;
   }
+}
+
+@media screen and(max-width: 1200px) {
+  .title {
+    font-size: 30px;
+
+    &:before,
+    &:after {
+
+      height: 21px;
+    }
+
+  }
+}
+
+
+@media screen and(max-width: 991px) {
+  .title {
+    break-word: break-word;
+    font-size: 28px;
+
+    &:before,
+    &:after {
+
+      height: 20px;
+    }
+
+  }
+
+}
+
+
+@media screen and(max-width: 767px) {
+  .title {
+    break-word: break-word;
+    font-size: 22px;
+
+    &:before,
+    &:after {
+
+      height: 14px;
+    }
+
+  }
+
 }
 

@@ -39,6 +39,10 @@
 
 @media (max-width: 1199px) {
   .icon-text {
+    & svg {
+      width: 30px;
+      height: 30px;
+    }
     &__img svg {
       width: 15px;
       height: 15px;

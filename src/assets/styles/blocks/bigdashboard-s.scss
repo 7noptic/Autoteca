@@ -1,6 +1,6 @@
 .bigdashboard-s {
   height: 480px;
-  width: 93%;
+  width: 48%;
   border-radius: $radiusBtn;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  max-width: 784px;
 
   &__title {
     font-weight: 800;

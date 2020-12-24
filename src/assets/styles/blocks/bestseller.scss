@@ -47,3 +47,19 @@
     }
   }
 }
+@media (max-width: 991px) {
+  .bestseller{
+    &__sort{
+      font-size: 14px;
+      margin-right: 25px;
+    }
+
+  }
+}
+@media (max-width: 767px) {
+  .bestseller__sort {
+    font-size: 12px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+}

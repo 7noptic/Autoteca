@@ -10,10 +10,12 @@
     justify-content: center;
     align-items: center;
   }
-  &__img{
+
+  &__img {
     margin-bottom: 75px;
   }
-  &__text{
+
+  &__text {
     word-wrap: break-word;
     font-size: 20px;
     text-transform: uppercase;
@@ -23,13 +25,25 @@
     padding: 0 30px;
   }
 }
+
 @media (max-width: 1629px) {
   .advantage {
     padding: 80px 40px;
 
-    &__text{
+    &__text {
       font-size: 18px;
       padding: 0 10px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .advantage {
+    padding: 80px 40px;
+&__img{
+  margin-bottom: 10px;
+}
+    &__text {
+      margin-bottom: 80px;
     }
   }
 }

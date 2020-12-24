@@ -12,3 +12,10 @@
     }
   }
 }
+@media (max-width: 1200px) {
+  .social{
+    &__link{
+      margin-left: 15px;
+    }
+  }
+}

@@ -1,47 +1,161 @@
-.footer{
+.footer {
   background: #FAFAFA;
-  &__header{
+
+  &__header {
     padding: 40px 0;
     border-bottom: 1px solid #D8D8D8;
   }
-  &__form{
+
+  &__form {
 
   }
-  &__input{
+
+  &__input {
     border: 2px solid #000;
     margin-left: 20px;
+
+    &:hover, &:active, &:focus {
+      border: 2px solid #000;
+    }
   }
-  &__btn{
+
+  &__btn, &-form__btn {
     margin-left: 20px;
     padding: 10px 22px;
     max-height: 40px;
+    width: 60%;
   }
-  &__agreement{
+
+  &__agreement {
     font-size: 10px;
     font-weight: 300;
     margin-left: 20px;
     width: 55%;
   }
-  &__row{
+
+  &__row {
     padding: 40px 0;
     border-bottom: 1px solid #D8D8D8;
   }
-  &__footer{
+
+  &__footer {
     padding: 30px 0;
 
   }
-  &__text{
+
+  &__text {
     font-weight: 300;
     font-size: 10px;
     padding: 0 15px;
     text-align: center;
   }
-  &__politics{
-transition: $transition4;
+
+  &__politics {
+    transition: $transition4;
     font-size: 14px;
     font-weight: 600;
-    &:hover{
+
+    &:hover {
       color: $red;
     }
   }
 }
+
+@media screen and(max-width: 1200px) {
+  .footer {
+    &__text {
+      font-size: 9px;
+    }
+
+    &__politics {
+      font-size: 11px;
+    }
+
+    &__logo svg {
+      width: 200px;
+    }
+
+    &__form {
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+    }
+
+    &__input {
+      width: 40%;
+      margin-bottom: 20px;
+
+    }
+
+    &-form__btn {
+      width: 40%;
+
+    }
+
+    &__agreement {
+      width: 40%;
+    }
+
+    &__btn {
+      width: 80%;
+    }
+  }
+}
+
+@media screen and(max-width: 991px) {
+  .footer {
+    &__logo  {
+      margin-bottom: 20px;
+    }
+
+    &__btn {
+      margin-bottom: 20px;
+    }
+
+    &__politics {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media screen and(max-width: 767px) {
+  .footer {
+    &__row, &__header, &__footer {
+      padding: 25px 0;
+    }
+
+    &__btn {
+      margin-bottom: 20px;
+    }
+
+    &__politics {
+      margin-top: 20px;
+    }
+
+    &__form {
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+    }
+
+    &__input {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+
+    &-form__btn {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+
+    &__agreement {
+      width: 90%;
+      text-align: center;
+    }
+
+    &__btn {
+      width: 80%;
+    }
+  }
+}
+

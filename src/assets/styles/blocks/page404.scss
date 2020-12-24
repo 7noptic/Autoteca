@@ -1,0 +1,19 @@
+.page404{
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__title{
+    font-size: 100px;
+    font-weight: 800;
+color: black;
+  }
+
+  &__subtitle{
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+  }
+}

@@ -1,6 +1,6 @@
 .dashboard-s{
   height: 300px;
-  width: 93%;
+  width:48%;
   background-repeat: no-repeat;
   border-radius: $radiusBtn;
   background-repeat: no-repeat;
@@ -45,6 +45,15 @@
 }
 @media (max-width: 1200px) {
   .dashboard-s{
+    padding: 20px;
+    &__title {
+      font-size: 18px;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .dashboard-s{
+    height: 480px;
     padding: 20px;
     &__title {
       font-size: 18px;
