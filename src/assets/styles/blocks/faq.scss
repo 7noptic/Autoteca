@@ -1,12 +1,18 @@
 .faq{
   &__btn{
+    transition: $transition4;
     display: flex;
     padding: 20px;
-    border-top: 2px solid rgba(0, 0, 0, 0.2);
-    border-left: 2px solid rgba(0, 0, 0, 0.2);
-    border-right: 2px solid rgba(0, 0, 0, 0.2);
+    border-top: 2px solid rgba(0, 0, 0, 1);
+    border-left: 2px solid rgba(0, 0, 0, 1);
+    border-right: 2px solid rgba(0, 0, 0, 1);
     border-bottom: 2px solid transparent;
-    border-radius: $radiusBtn;
+    border-top-left-radius: $radiusBtn;
+    border-top-right-radius: $radiusBtn;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: $radiusBtn;
+    border-bottom-left-radius: $radiusBtn;
     margin-top: 10px;
     &:active{
       //border: none;
@@ -15,12 +21,17 @@
 
 }
 .collapsed{
+  transition: $transition4;
   border-top: 2px solid rgba(0, 0, 0, 0.2);
   border-left: 2px solid rgba(0, 0, 0, 0.2);
   border-right: 2px solid rgba(0, 0, 0, 0.2);
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+
+  border-bottom-right-radius: $radiusBtn;
+  border-bottom-left-radius: $radiusBtn;
 }
 .card {
+  transition: $transition4;
   position: relative;
   display: -ms-flexbox;
   display: flex;
@@ -30,10 +41,14 @@
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-  border-left: 2px solid rgba(0, 0, 0, 0.2);
-  border-right: 2px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid rgba(0, 0, 0, 1);
+  border-left: 2px solid rgba(0, 0, 0, 1);
+  border-right: 2px solid rgba(0, 0, 0, 1);
   border-top: none;
+  margin-top: -4px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
   border-bottom-left-radius: $radiusBtn;
   border-bottom-right-radius: $radiusBtn;
+  margin-bottom: 5px;
 }

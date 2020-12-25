@@ -9,7 +9,6 @@ import 'popper.js/dist/popper.min';
 import 'bootstrap/dist/js/bootstrap.min';
 import 'swiper/swiper-bundle.min'
 import './assets/js/main'
-import 'matchheight/dist/MatchHeight.min'
 
 
 

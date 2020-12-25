@@ -60,3 +60,11 @@
     }
   }
 }
+@media (max-width: 500px) {
+  .dashboard-s{
+    padding: 15px;
+    &__title {
+      font-size: 14px;
+    }
+  }
+}

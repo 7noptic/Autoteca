@@ -19,3 +19,11 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  .social{
+    &__link{
+      margin-left: 5px;
+    }
+  }
+}
