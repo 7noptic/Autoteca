@@ -13,7 +13,9 @@
     border-bottom-left-radius: 0;
     border-bottom-right-radius: $radiusBtn;
     border-bottom-left-radius: $radiusBtn;
-    margin-top: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
     &:active{
       //border: none;
     }
@@ -51,4 +53,16 @@
   border-bottom-left-radius: $radiusBtn;
   border-bottom-right-radius: $radiusBtn;
   margin-bottom: 5px;
+  font-weight: 300;
+  font-size: 14px;
+}
+@media screen and (max-width: 575px){
+  .faq{
+    &__btn{
+      font-size: 14px;
+    }
+  }
+  .card{
+    font-size: 10px;
+  }
 }

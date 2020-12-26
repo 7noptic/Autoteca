@@ -1,6 +1,10 @@
 .slider-category {
   padding: 40px;
-
+&__title{
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: -20px;
+}
   &__item {
     background: #F6F6F6;
     opacity: 0.6;

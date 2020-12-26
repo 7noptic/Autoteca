@@ -10,6 +10,15 @@
   max-width: 510px;
   margin: 0 auto;
 
+  &__rating {
+    width: 100% !important;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px;
+    background-color: #fff;
+    border-radius: $radiusBtn;
+  }
+
   &__title {
     font-weight: 600;
     font-size: 30px;
@@ -34,17 +43,21 @@
     border-radius: $radiusBtn;
     padding: 8px 20px;
     transition: $transition4;
+
     &::placeholder {
       font-size: 12px;
       font-weight: 400;
     }
-    &:hover{
+
+    &:hover {
       background-color: darken(#fafafa, 10%);
     }
-    &:active,&:focus{
+
+    &:active, &:focus {
       &::placeholder {
         color: white;
       }
+
       background-color: $red;
 
       color: white;
@@ -62,5 +75,27 @@
     padding-bottom: 10px;
     font-size: 12px;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .green-form {
+    padding: 20px 25px;
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__subtitle {
+      font-size: 14px;
+    }
+
+    &__btn {
+      height: 40px;
+    }
+
+    &__agreement {
+      font-size: 10px;
+    }
   }
 }

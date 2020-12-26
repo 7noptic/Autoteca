@@ -1,0 +1,11 @@
+.block-reviews{
+  &__item{
+    padding: 15px 10px !important;
+  }
+  &__img{
+    display: flex;
+
+    justify-content: flex-end;
+    padding: 15px 0 0 15px;
+  }
+}

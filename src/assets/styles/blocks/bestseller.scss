@@ -6,6 +6,7 @@
     opacity: .35;
     transition: $transition4;
     border-bottom: 2px dashed transparent;
+      margin-bottom: 15px;
 
     &:hover {
       opacity: .6;
@@ -17,6 +18,14 @@
     }
   }
 
+}
+.nav-item{
+  &:last-child .bestseller {
+    &__sort{
+      margin-right: 0;
+
+    }
+  }
 }
 .nav-link.bestseller__sort{
   padding: 0;

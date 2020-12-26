@@ -1,0 +1,29 @@
+.contacts-item{
+display: flex;
+  padding-bottom: 45px;
+  align-items: center;
+  &__text{
+    padding-left: 40px;
+    font-weight: 300;
+    font-size: 20px;
+    & span{
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+}
+@media (max-width: 1629px) {
+  .contacts-item{
+    display: flex;
+    padding-bottom: 25px;
+    align-items: center;
+    &__text{
+      padding-left: 30px;
+      font-size: 16px;
+      & span{
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+  }
+}

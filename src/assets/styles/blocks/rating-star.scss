@@ -1,0 +1,38 @@
+.rating-star {
+  overflow: hidden;
+  width: 120px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.rating-star:not(:checked) > input {
+  display: none;
+}
+.rating-star:not(:checked) > label {
+  width: 26px;
+  padding: 0;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 24px;
+  color: lightgrey;
+  text-shadow: 1px 1px #bbb;
+}
+.rating-star:not(:checked) > label:before {
+  content: '★';
+}
+.rating-star > input:checked ~ label {
+  color: $red;
+}
+.rating-star:not(:checked) > label:hover,
+.rating-star:not(:checked) > label:hover ~ label {
+  color: $red;
+}
+.rating-star > input:checked + label:hover,
+.rating-star > input:checked + label:hover ~ label,
+.rating-star > input:checked ~ label:hover,
+.rating-star > input:checked ~ label:hover ~ label,
+.rating-star > label:hover ~ input:checked ~ label {
+  color: $red;
+}
+.rate-area > label:active {
+  position: relative;
+}

@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
 
-  &-black{
+  &-black {
     background-color: #000;
     font-size: 12px;
     font-weight: 800;
@@ -19,6 +19,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff;
+
     &:hover {
       background-color: $green;
       color: white;
@@ -27,7 +29,19 @@
       box-shadow: 0px 0px 15px 10px rgba(39, 150, 157, 0.43);
     }
   }
-  &-red{
+
+  &-transparent {
+    background-color: transparent;
+    border: 2px dashed #FFFFFF;
+    color: #ffffff;
+
+    &:hover {
+      border: 2px solid #FFFFFF;
+      background-color: transparent !important;
+    }
+  }
+
+  &-red {
     background-color: $red;
     display: flex;
     justify-content: center;
@@ -42,8 +56,9 @@
     box-shadow: 0px 0px 15px 10px rgba(217, 55, 50, 0.43);
   }
 }
+
 @media (max-width: 1279px) {
-  .btn{
+  .btn {
     font-size: 10px;
   }
 }

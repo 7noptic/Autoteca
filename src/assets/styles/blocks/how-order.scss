@@ -51,3 +51,41 @@
     line-height: 14px;
   }
 }
+
+@media screen and (max-width: 1630px) {
+  .how-order {
+
+    &__btn {
+      width: 22%;
+    }
+  }
+
+}
+
+@media screen and (max-width: 991px) {
+  .how-order {
+
+
+    &__form {
+      flex-wrap: wrap;
+    }
+
+    &__input {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 20px;
+    }
+
+    &__btn {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    &__agreement {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+      line-height: 12px;
+    }
+  }
+}

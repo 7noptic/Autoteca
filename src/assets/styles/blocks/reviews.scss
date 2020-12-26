@@ -1,7 +1,8 @@
-.reviews{
-  &__item{
+.reviews {
+  &__item {
     display: flex;
   }
+
   &__sort {
     font-weight: 700;
     font-size: 20px;
@@ -18,19 +19,42 @@
       border-bottom: 2px dashed #000000;
     }
   }
-  &__btn{
-    margin-top: 40px;
+
+  &__btn {
+    margin-top: 20px;
     padding: 12px 25px;
+    min-height: 60px;
   }
-  &__video{
+
+  &__btn-transparent {
+    width: 90%;
+    min-height: 60px;
+    margin-top: 20px;
+
+  }
+
+  &__video {
     padding: 15px;
     cursor: pointer;
-    & img{
+
+    & img {
       transition: $transition4;
       border-radius: $radiusBtn;
-      &:hover{
+
+      &:hover {
         transform: scale(1.05);
       }
     }
   }
+}
+@media screen and (max-width: 575px){
+  .reviews{
+    &__btn-transparent {
+      width: 100%;
+      min-height: 60px;
+      margin-top: 20px;
+
+    }
+  }
+
 }

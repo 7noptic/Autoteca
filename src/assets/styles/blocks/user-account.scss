@@ -1,0 +1,152 @@
+.user-account {
+  padding-bottom: 180px;
+
+  &__header {
+    display: flex;
+
+    & svg {
+      margin-right: 20px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 30px;
+    padding-bottom: 30px;
+    max-width: 360px;
+  }
+  &__subtitle{
+    font-weight: 700;
+    font-size: 20px;
+    padding-bottom: 30px;
+  }
+
+  &__list {
+    display: block;
+  }
+
+  &__listitem {
+    font-weight: 300;
+    font-size: 14px;
+    margin-bottom: 20px;
+
+    &-active {
+      display: inline-block;
+      font-weight: 600;
+      font-size: 14px;
+      border-bottom: 2px dashed #000;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__info {
+  }
+
+  &__text {
+    padding-bottom: 20px;
+    font-weight: 300;
+    font-size: 14px;
+
+    &-b {
+      font-weight: 600;
+      font-size: 14px;
+      padding-bottom: 15px;
+    }
+    &-r {
+      font-weight: 600;
+      font-size: 14px;
+      padding-bottom: 15px;
+      color: $red;
+    }
+
+    & span {
+      font-weight: 700;
+      font-size: 20px;
+    }
+  }
+
+  &__btn {
+    width: auto;
+    height: 40px;
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    & img {
+      border-radius: 50%;
+    }
+  }
+
+}
+
+@media screen and (max-width: 991px) {
+  .user-account {
+    padding-bottom: 90px;
+
+    &__header {
+      display: flex;
+
+      & svg {
+        margin-right: 20px;
+      }
+    }
+
+    &__title {
+      font-weight: 600;
+      font-size: 30px;
+      padding-bottom: 30px;
+      max-width: 360px;
+    }
+
+    &__list {
+      display: flex;
+      margin-left: 20px;
+      align-items: center;
+    }
+
+    &__listitem {
+      font-weight: 300;
+      font-size: 14px;
+      margin-left: 20px;
+      padding-top: 15px;
+
+
+      &-active {
+        padding-top: 15px;
+        display: block;
+        font-weight: 600;
+        font-size: 14px;
+        border-bottom: 2px dashed #000;
+        margin-left: 20px;
+      }
+    }
+
+    &__info {
+    }
+
+    &__text {
+      padding-bottom: 20px;
+      font-weight: 300;
+      font-size: 14px;
+
+      &-b {
+        font-weight: 600;
+        padding-bottom: 15px;
+      }
+
+      & span {
+        font-weight: 700;
+        font-size: 20px;
+      }
+    }
+
+    &__btn {
+      width: 80%;
+    }
+
+  }
+
+}

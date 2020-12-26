@@ -1,0 +1,36 @@
+.contacts-social {
+  &__link {
+    margin-left: 0px!important;
+    margin-right: 20px;
+  }
+
+  padding-bottom: 60px;
+}
+@media (max-width: 1629px) {
+  .contacts-social {
+    &__link {
+
+      & svg{
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .contacts-social {
+    &__link {
+      margin-left: 0 !important;
+      margin-right: 10px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .contacts-social {
+    &__link {
+      margin-left: 0px!important;
+      margin-right: 5px;
+    }
+  }
+}
