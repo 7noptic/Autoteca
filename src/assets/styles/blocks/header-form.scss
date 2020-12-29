@@ -1,11 +1,11 @@
 .header-form {
   position: relative;
   margin-left: 35px;
-
+z-index: 4;
   &__input {
     background-color: #fafafa;
     border-radius: $radiusBtn;
-    width: 333px;
+    //width: 333px;
     padding: 7px 35px;
     transition: $transition4;
 
@@ -47,7 +47,7 @@
     margin-left: 20px;
 
     &__input {
-      width: 295px;
+     // width: 295px;
     }
   }
 }
@@ -55,7 +55,7 @@
 @media (max-width: 1200px) {
   .header-form {
     &__input {
-      width: 220px;
+      //width: 220px;
       padding: 2px 35px;
 
       &::placeholder{
@@ -64,6 +64,17 @@
     }
     &:before{
       top: 6px;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .header-form {
+    margin-left: 0;
+    margin-bottom: 20px;
+    &__input {
+      //width: 220px;
+      padding: 2px 35px;
+
     }
   }
 }

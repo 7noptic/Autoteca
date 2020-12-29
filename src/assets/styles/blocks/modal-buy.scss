@@ -1,46 +1,51 @@
-.modal-buy{
+.modal-buy {
   position: fixed;
   top: 0;
   height: 100%;
   left: 0;
-  padding: 30px;
   overflow: auto;
-  transition: $transition4;
-  z-index: 10;
+  z-index: 1000;
   display: none;
-  &-active{
+  border-right: 1px solid $yellow;
+
+  &-active {
     display: block;
   }
-  &__wrapper{
+
+  &__wrapper {
     padding: 40px;
     background-color: #fff;
     border-radius: $radiusBtn;
     width: 360px;
-    height: auto;
-    -webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
+    height: 100%;
+    overflow: auto;
+
   }
-  &__title{
+
+  &__title {
     font-weight: 700;
     font-size: 20px;
     padding-bottom: 20px;
   }
-  &__text{
+
+  &__text {
     font-weight: 300;
     font-size: 14px;
     padding-bottom: 20px;
   }
-  &__form{
+
+  &__form {
     flex-direction: column;
   }
-  &__input{
+
+  &__input {
     width: 100%;
     text-align: center;
     border: 2px solid #000000;
     margin-bottom: 20px;
   }
-  &__agreement{
+
+  &__agreement {
     margin-top: 15px;
     font-size: 10px;
     font-weight: 300;
@@ -48,23 +53,25 @@
   }
 
 
-  &__exit{
+  &__exit {
     position: absolute;
-    top: 60px;
-    right: 60px;
+    top: 5px;
+    left: 5px;
     cursor: pointer;
-    & path, & rect{
+
+    & path, & rect {
       transition: $transition4;
     }
-    &:hover{
-      & path{
+
+    &:hover {
+      & path {
         fill: $red;
         stroke: $red;
       }
     }
   }
 
-  &__btn{
+  &__btn {
     width: 100%;
     padding: 10px;
   }

@@ -1,0 +1,19 @@
+.post-info-paymentblock{
+  display: flex;
+
+  & input{
+    position: absolute;
+    right: 25%;
+    top: 20px;
+  }
+  &__item{
+    display: flex;
+    width: 30%;
+    position: relative;
+  }
+  &__radiotext{
+    padding: 10px 0;
+    font-size: 12px;
+    width: 90%;
+  }
+}

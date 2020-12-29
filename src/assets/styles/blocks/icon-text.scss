@@ -7,6 +7,7 @@
   }
 
   &__text {
+  z-index: 4;
     padding-top: 2px;
     padding-left: 7px;
     font-size: 12px;
@@ -14,7 +15,7 @@
 
   &__link {
     transition: $transition4;
-
+z-index: 4;
     &:hover {
       color: $red;
     }

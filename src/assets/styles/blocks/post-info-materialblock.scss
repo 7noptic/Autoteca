@@ -1,0 +1,42 @@
+.post-info-materialblock{
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 25px;
+  &__text{
+    font-weight: 600;
+    font-size: 14px;
+    padding-bottom: 15px;
+  }
+  &__item{
+    width: 33%;
+    padding: 5px;
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__material{
+    width: 42px;
+    height: 42px;
+    display: block;
+    border-radius: 50%;
+  }
+  &__name{
+    padding: 2px 2px 3px;
+    font-weight: 500;
+    font-size: 8px;
+    text-align: center;
+  }
+}
+.post-info-materialblock-t2{
+  align-items: center;
+  & .post-info-materialblock__item{
+    width: 90px;
+  }
+  & .post-info-materialblock__material{
+
+  }
+  & .post-info-materialblock__name{
+
+  }
+}

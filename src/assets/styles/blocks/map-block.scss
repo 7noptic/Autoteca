@@ -21,3 +21,22 @@
     font-size: 20px;
   }
 }
+@media (max-width: 991px){
+  .map-block{
+    &__item{
+      padding-bottom: 20px;
+    }
+    &__title {
+      font-size: 24px;
+      padding-bottom: 20px;
+    }
+    &__header{
+    }
+    &__address{
+      font-size: 12px;
+    }
+    &__price{
+      font-size: 16px;
+    }
+  }
+}

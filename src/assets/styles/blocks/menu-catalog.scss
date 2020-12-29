@@ -1,60 +1,62 @@
 .menu-catalog {
   position: fixed;
+  left: -100%;
   top: 0;
   height: 100%;
   margin-left: 0;
   overflow: auto;
   transition: $transition4;
   z-index: 100;
-  display: none;
-  &-active{
-    display: block;
-  }
-&__wrapper{
-  min-height: 100%;
-  height: auto;
-  display: flex;
 
-}
-  &__nav{
+  &.active {
+    left: 0;
+  }
+
+  &__wrapper {
+    min-height: 100%;
+    height: auto;
+    display: flex;
+  }
+
+  &__nav {
     width: 320px;
     padding: 30px;
-
     background-color: $green;
-
   }
+
   &__item {
-    padding: 12px 0;
     cursor: pointer;
-    & path{
+
+    & path {
       transition: $transition4;
-    }
-    &:hover{
-      & a{
-        color: black;
-      }
-      & path{
-        fill: black;
-      }
     }
   }
 
   &__link {
+    padding: 12px 0;
+    display: block;
+    width: 100%;
     font-size: 14px;
     font-weight: 300;
     color: #fff;
     transition: $transition4;
     opacity: .6;
-    &-active{
+
+    &:hover {
+      color: #fff;
+    }
+
+    &.active {
       opacity: 1;
       display: block;
       font-weight: 600;
       position: relative;
-      &::after{
+
+      &::after {
         content: url("../img/left-arrow.svg");
         display: block;
         position: absolute;
-        top: 7px;
+        top: 18px;
         right: 0;
       }
     }
@@ -62,5 +64,43 @@
     & span {
       margin-right: 30px;
     }
+  }
+  &__sublink{
+    padding: 12px;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+    display: block;
+    &-sub{
+      margin-left: 15px;
+      padding: 5px;
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 300;
+      width: 100%;
+      display: block;
+    }
+  }
+
+}
+.lvl2{
+  & li{
+    //padding: 10px;
+  }
+}
+.lvl2-wrap {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.lvl3-wrap {
+  display: none;
+
+  &.active {
+    display: block;
   }
 }

@@ -1,0 +1,35 @@
+.basket-item{
+border: 1px solid #D8D8D8;
+  border-radius: $radiusBtn;
+  padding: 15px;
+  margin-bottom: 20px;
+  &__name{
+    font-weight: 300;
+    font-size: 14px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 40px;
+  }
+  &__availability{
+    color: #52820F;
+    font-size: 12px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 40px;
+  }
+  &__count{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+
+  }
+
+  &__num{
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 2px solid #000000;
+    border-radius: $radiusBtn;
+  }
+}

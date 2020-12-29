@@ -1,4 +1,4 @@
-.header {
+/*.header {
   &__top {
     padding: 20px 5px;
   }
@@ -63,6 +63,418 @@
 }
     &__order{
       font-size: 8px;
+    }
+  }
+}*/
+.header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 15px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 2;
+  }
+
+  &__logo {
+    z-index: 3;
+  }
+
+  &__body {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__burger {
+    display: none;
+  }
+
+  &__burger-catalog{
+    display: block;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    z-index: 3;
+    margin-right: 20px;
+
+    &.active {
+      z-index: 500000;
+      position: fixed;
+      top: 5px;
+      left: 5px;
+      &::before, &::after {
+      }
+
+      &::before {
+        transform: rotate(45deg);
+        top: 6px;
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+        bottom: 6px;
+      }
+
+      & span {
+        transform: scale(0);
+      }
+    }
+
+    &::before, &::after {
+      content: '';
+      background-color: #000;
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      left: 0;
+      transition: $transition4;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    & span {
+      background-color: #000;
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      left: 0;
+      top:6px;
+      transition: $transition4;
+    }
+  }
+  &__list {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    justify-content: space-between;
+
+    & li {
+
+    }
+
+  }
+
+  &__link {
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  &__logo {
+    z-index: 2;
+  }
+
+  &__icon {
+    z-index: 2;
+  }
+
+  &__leftblock {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__block {
+    padding-left: 10px;
+    display: flex;
+    z-index: 2;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80px;
+  }
+
+  &__rightblock {
+    padding-top: 2px;
+    align-items: flex-end;
+    display: flex;
+    z-index: 2;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80px;
+  }
+
+  &__bottomblock {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__catalog {
+    z-index: 6;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    max-width: 360px;
+    height: 100%;
+    background-color: $green;
+    padding: 30px 10px 20px 30px;
+overflow: auto;
+    &.active {
+      left: 0;
+    }
+  }
+
+  &__link {
+    font-size: 10px;
+    padding: 8px;
+    transition: $transition4;
+    border-radius: $radiusBtn;
+
+    &:hover {
+      background-color: $yellow;
+    }
+  }
+
+  &__tel {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__number {
+    font-size: 18px;
+    font-weight: 700;
+    transition: $transition4;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  &__order {
+    color: $red;
+    font-size: 12px;
+    font-weight: 800;
+    transition: $transition4;
+
+    &:hover {
+
+    }
+  }
+
+  &__btn {
+    padding: 7.5px 14px;
+    margin: 0 40px;
+  }
+}
+
+
+@media (max-width: 1629px) {
+  .header {
+    &__link {
+      font-size: 8px;
+    }
+  }
+}
+
+@media (max-width: 1279px) {
+  .header {
+    &__link {
+      padding: 5px;
+    }
+
+    &__logo {
+      & svg {
+        width: 145px;
+        height: 35px;
+      }
+    }
+
+    &__number {
+      font-size: 12px;
+    }
+
+    &__order {
+      font-size: 9px;
+    }
+  }
+
+}
+
+@media (max-width: 1200px) {
+  .header {
+    &__link {
+      font-size: 7px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+    &__leftblock {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+    }
+
+    &__rightblock {
+      flex-direction: row;
+      align-items: center;
+      height: auto;
+      justify-content: flex-end;
+    }
+
+    &__link {
+      font-size: 14px;
+      font-weight: 300;
+      color: #fff;
+      padding: 0;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    &__logo {
+      & svg {
+        width: 124px;
+        height: 30px;
+      }
+    }
+
+    &__body {
+      height: 60px;
+    }
+
+
+    &__list {
+      z-index: 2;
+      display: block;
+      border-top: 1px dashed #FFFFFF;
+
+      & li {
+        padding: 0 0 20px 0;
+
+        &:first-child {
+          padding: 30px 0 20px 0;
+        }
+      }
+    }
+
+    &__burger{
+      display: block;
+      position: relative;
+      width: 20px;
+      height: 20px;
+      z-index: 3;
+      margin-right: 20px;
+
+      &.active {
+        position: fixed;
+        top: 5px;
+        left: 5px;
+        &::before, &::after {
+        }
+
+        &::before {
+          transform: rotate(45deg);
+          top: 8px;
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+          bottom: 8px;
+        }
+
+        & span {
+          transform: scale(0);
+        }
+      }
+
+      &::before, &::after {
+        content: '';
+        background-color: #000;
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        left: 0;
+        transition: $transition4;
+      }
+
+      &::before {
+        top: 0;
+      }
+
+      &::after {
+        bottom: 0;
+      }
+
+      & span {
+        background-color: #000;
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        left: 0;
+        top: 8px;
+        transition: $transition4;
+      }
+    }
+
+    &__nav {
+      z-index: 4;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      max-width: 360px;
+      height: 100%;
+      background-color: $green;
+      padding: 30px 10px 20px 30px;
+      transition: $transition4;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+
+      &.active {
+        left: 0;
+      }
+    }
+
+    &__catalog {
+      z-index: 4;
+      position: relative;
+      background-color: $green;
+      left: 0;
+      height: auto;
+      padding: 0 0 30px 0;
+      transition: $transition4;
+overflow: initial;
+    }
+
+    &__search {
+      z-index: 4;
+      position: relative;
+      left: 0;
+      height: auto;
+      padding: 0 0 0 0;
+      transition: $transition4;
+      overflow: auto;
+    }
+
+  }
+  body {
+    &.lock {
+      overflow: hidden;
     }
   }
 }

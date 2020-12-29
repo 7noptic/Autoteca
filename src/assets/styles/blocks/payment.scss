@@ -26,3 +26,22 @@
     font-size: 14px;
   }
 }
+@media (max-width: 991px) {
+  .payment {
+    &__item {
+      padding-bottom: 30px;
+    }
+
+    &__descr {
+      padding-left: 30px;
+    }
+
+    &__title {
+      font-size: 16px;
+    }
+
+    &__text {
+      font-size: 12px;
+    }
+  }
+}

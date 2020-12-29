@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
 align-items: center;
+  margin-bottom: 50px;
   &__start, &__end {
     font-size: 14px;
     font-weight: 600;
@@ -29,6 +30,33 @@ align-items: center;
     &-active {
       font-weight: 600;
       font-size: 16px;
+    }
+  }
+}
+@media (max-width: 991px){
+  .pagination {
+    margin-bottom: 30px;
+    &__start, &__end {
+      font-size: 12px;
+      padding: 0 15px;
+    }
+
+    &__list {
+    }
+
+    &__item {
+      padding-right: 15px;
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+    &__link {
+      font-size: 12px;
+      &-active {
+        font-size: 14px;
+      }
     }
   }
 }

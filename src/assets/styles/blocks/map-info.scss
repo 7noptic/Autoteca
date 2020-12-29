@@ -1,0 +1,51 @@
+.map-info {
+  padding: 0 60px;
+
+  &__item {
+    padding-bottom: 40px;
+display: flex;
+  }
+  &__info{
+    padding-left: 20px;
+
+  }
+  &__text{
+    font-weight: 300;
+    font-size: 14px;
+    padding-bottom: 10px;
+    &-b{
+      font-weight: 700;
+      font-size: 12px;
+      padding-bottom: 5px;
+    }
+  }
+  &__price{
+    font-weight: 700;
+    font-size: 20px;
+    padding-bottom: 10px;
+
+  }
+}
+@media (max-width: 574px) {
+  .map-info {
+    padding: 0 30px;
+
+    &__item {
+      padding-bottom: 30px;
+    }
+    &__info{
+      padding-left: 20px;
+
+    }
+    &__text{
+      font-size: 12px;
+      &-b{
+        font-size: 11px;
+        padding-bottom: 5px;
+      }
+    }
+    &__price{
+      font-size: 16px;
+    }
+  }
+}

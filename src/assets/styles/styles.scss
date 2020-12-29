@@ -14,16 +14,22 @@
 @import "blocks/bigdashboard-s";
 @import "blocks/bestseller";
 @import "blocks/block-reviews";
+@import "blocks/basket";
+@import "blocks/basket-item";
 /* C */
 @import "blocks/container";
 @import "blocks/card-bestseller";
 @import "blocks/contacts";
 @import "blocks/contacts-item";
 @import "blocks/contacts-social";
+@import "blocks/category-select";
+@import "blocks/checkbox";
+@import "blocks/category";
 /* D */
 @import "blocks/dashboard";
 @import "blocks/dashboard-s";
 @import "blocks/delivery";
+@import "blocks/district";
 /* E */
 
 /* F */
@@ -66,15 +72,26 @@
 @import "blocks/modal-info";
 @import "blocks/modal-buy";
 @import "blocks/map-block";
+@import "blocks/map-info";
+@import "blocks/more-product";
 /* N */
 @import "blocks/news-aside";
 @import "blocks/news-post";
 /* O */
+@import "blocks/order-results";
+@import "blocks/order";
 /* P */
 @import "blocks/price";
 @import "blocks/payment";
 @import "blocks/page404";
 @import "blocks/pagination";
+@import "blocks/post-description";
+@import "blocks/post-info";
+@import "blocks/post-info-materialblock";
+@import "blocks/post-info-moreblock";
+@import "blocks/post-info-colorblock";
+@import "blocks/post-info-countblock";
+@import "blocks/post-info-paymentblock";
 /* Q */
 
 /* R */
@@ -90,6 +107,8 @@
 @import "blocks/submenu";
 @import "blocks/submenu-content";
 @import "blocks/submenu-list";
+@import "blocks/subtext";
+@import "blocks/slider-mark";
 /* T */
 @import "blocks/title";
 @import "blocks/text-block";

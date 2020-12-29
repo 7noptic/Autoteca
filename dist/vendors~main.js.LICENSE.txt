@@ -31,6 +31,15 @@
 
 /*! jQuery v3.5.1 -ajax,-ajax/jsonp,-ajax/load,-ajax/script,-ajax/var/location,-ajax/var/nonce,-ajax/var/rquery,-ajax/xhr,-manipulation/_evalUrl,-deprecated/ajax-event-alias,-effects,-effects/Tween,-effects/animatedSelector | (c) JS Foundation and other contributors | jquery.org/license */
 
+/**
+ * Fresco - A Beautiful Responsive Lightbox - v2.3.0
+ * (c) 2012-2019 Nick Stakenburg
+ *
+ * https://www.frescojs.com
+ *
+ * @license: https://creativecommons.org/licenses/by/4.0
+ */
+
 /**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
  * @version 1.16.1

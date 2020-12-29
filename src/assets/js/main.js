@@ -1,79 +1,54 @@
 'use script';
-
 import jQuery from 'jquery';
 import $ from 'jquery';
 import Swiper, {Navigation, Pagination} from 'swiper';
-// configure Swiper to use modules
+
 Swiper.use([Navigation, Pagination]);
 
 window.addEventListener('DOMContentLoaded', () => {
-    const bestsellerTabsParent = document.querySelector('.bestseller'),
-        catalogBtn = document.querySelector('#catalogBtn'),
-        articlesTabsParent = document.querySelector('.articles'),
-        reviewsTabsParent = document.querySelector('.reviews'),
-        buyOneClickBtn = document.querySelectorAll('.js-buy-one-click');
-    const catalogContent = document.querySelector('.menu-catalog');
 
-    document.addEventListener('click', (event) => {
-        const target = event.target;
-        if (catalogContent.classList.contains('menu-catalog-active')) ;
-        {
-
-        }
-
+    /* BURGER-MENU */
+    $(document).ready(function () {
+        $('.header__burger').click(function (event) {
+            event.preventDefault()
+            $('.header__burger,.header__nav').toggleClass('active');
+            $('html').toggleClass('lock');
+        });
+        $('.js-catalog-btn').click(function (event) {
+            $('.header__burger-catalog,.header__catalog').toggleClass('active');
+            $('html,body,main').toggleClass('lock');
+        });
 
     });
-    /* КАТАЛОГ ТОВАРОВ */
-    if (catalogBtn) {
-        catalogBtn.addEventListener('click', () => {
-            if (!catalogContent.classList.contains('menu-catalog-active')) {
-                catalogContent.classList.add('menu-catalog-active');
+    let subMenuParrent = document.querySelector('.header__nav'),
+        cataloglink1 = document.querySelectorAll('.menu-catalog__link'),
+        cataloglink2 = document.querySelectorAll('.menu-catalog__sublink'),
+        lvl2wrap = document.querySelectorAll('.lvl2-wrap'),
+        lvl3wrap = document.querySelectorAll('.lvl3-wrap');
 
-            } else {
-                catalogContent.classList.remove('menu-catalog-active');
-            }
+    subMenuParrent.addEventListener('click', (event) => {
 
-            catalogContent.addEventListener('click', (event) => {
-                const target = event.target,
-                    submenu = document.querySelectorAll('.submenu-item'),
-                    menuLink = document.querySelectorAll('.menu-catalog__link'),
-                    menuItem = document.querySelectorAll('.menu-catalog__item'),
-                    submenuLink = document.querySelectorAll('.submenu__link'),
-                    submenuItem = document.querySelectorAll('.submenu__item'),
-                    submenuContent = document.querySelectorAll('.submenu-content');
+        const target = event.target;
+        if (target && target.classList.contains('menu-catalog__link')) {
+            event.preventDefault();
+            cataloglink1.forEach((item, i) => {
 
-                if (target && (target.classList.contains('menu-catalog__item') || target.classList.contains('menu-catalog__link'))) {
-                    menuItem.forEach((item, i) => {
-                        if (target == item) {
-                            hideTabsContent(submenu, "submenu-item-active", menuLink, 'menu-catalog__link-active');
-                            showTabsContent(i, submenu, "submenu-item-active", menuLink, 'menu-catalog__link-active');
-                        }
-                    });
-                    menuLink.forEach((item, i) => {
-                        if (target == item) {
-                            hideTabsContent(submenu, "submenu-item-active", menuLink, 'menu-catalog__link-active');
-                            showTabsContent(i, submenu, "submenu-item-active", menuLink, 'menu-catalog__link-active');
-                        }
-                    });
-                }
-                if (target && (target.classList.contains('submenu__item') || target.classList.contains('submenu__link'))) {
-                    submenuLink.forEach((item, i) => {
-                        if (target == item) {
-                            hideTabsContent(submenuContent, "submenu-content-active", submenuLink, 'submenu__link-active');
-                            showTabsContent(i, submenuContent, "submenu-content-active", submenuLink, 'submenu__link-active');
-                        }
-                    });
-                    submenuItem.forEach((item, i) => {
-                        if (target == item) {
-                            hideTabsContent(submenuContent, "submenu-content-active", submenuLink, 'submenu__link-active');
-                            showTabsContent(i, submenuContent, "submenu-content-active", submenuLink, 'submenu__link-active');
-                        }
-                    });
-
+                if(item == target){
+                    target.classList.toggle('active');
+                    lvl2wrap[i].classList.toggle('active');
                 }
             });
-        });
-    }
+        }
+        if (target && target.classList.contains('menu-catalog__sublink')) {
+            event.preventDefault();
+            cataloglink2.forEach((item, i) => {
+                if(item == target){
+                    lvl3wrap[i].classList.toggle('active');
+                }
+            });
+        }
+    });
+
 
     /* МОДАЛКИ */
     document.addEventListener('click', (event) => {
@@ -81,17 +56,23 @@ window.addEventListener('DOMContentLoaded', () => {
             modalBuy = document.querySelector('.modal-buy'),
             modalBasket = document.querySelector('.modal-basket'),
             exitBuy = document.querySelector('.modal-buy__exit'),
+            closeBasket = document.querySelector('.modal-basket__close'),
             exitBasket = document.querySelectorAll('.modal-basket__exit');
 
         let basketItem = document.querySelectorAll('.modal-basket__item');
 
         if (target && target.classList.contains('js-buy-one-click')) {
+            event.preventDefault()
+
             openModal(modalBuy, 'modal-buy-active');
         } else if (target && target.classList.contains('js-add-to-basket')) {
+            event.preventDefault()
+
             openModal(modalBasket, 'modal-basket-active');
         }
         if (modalBasket) {
             modalBasket.addEventListener('click', (event) => {
+                event.preventDefault()
                 const target = event.target;
                 if (target && target.classList.contains('modal-basket__exit'))
                     exitBasket.forEach((item, i) => {
@@ -105,9 +86,19 @@ window.addEventListener('DOMContentLoaded', () => {
                     });
             });
         }
+
         if (exitBuy) {
             exitBuy.addEventListener('click', () => {
+                event.preventDefault()
+
                 closeModal(modalBuy, 'modal-buy-active');
+            });
+        }
+        if (closeBasket) {
+            closeBasket.addEventListener('click', () => {
+                event.preventDefault()
+
+                closeModal(modalBasket, 'modal-basket-active');
             });
         }
 
@@ -128,38 +119,19 @@ window.addEventListener('DOMContentLoaded', () => {
         };
     });
 
-    /* ДОБАВИТЬ В КОРЗИНУ */
-    function showHideTabs(event, i = 0, content, contentClass, link, linkClass, classCheck) {
+
+    document.addEventListener('click', (event) => {
         const target = event.target;
-        if (target && target.classList.contains(classCheck)) {
-
-            link.forEach((item, i) => {
-                if (target == item) {
-                    hideTabsContent(content, contentClass, link, linkClass);
-                    showTabsContent(i, content, contentClass, link, linkClass);
-                }
+        let i = 0;
+        if (target && target.classList.contains('js-checkbox__label')) {
+            let huita = document.querySelectorAll('.category-select__accept');
+            huita.forEach(item => {
+                $(item).remove();
             });
+            $(target).after(`<a href="" class="btn category-select__accept">ПРИМЕНИТЬ</a>`);
+
         }
-
-    }
-
-    function hideTabsContent(content, contentClass, link, linkClass) {
-        content.forEach(item => {
-            item.classList.remove(contentClass);
-        });
-
-        link.forEach(item => {
-            item.classList.remove(linkClass);
-        });
-
-    }
-
-    function showTabsContent(i = 0, content, contentClass, link, linkClass) {
-
-        content[i].classList.add(contentClass, 'animationShow');
-        link[i].classList.add(linkClass, 'animationShow');
-    }
-
+    });
     let swiper = new Swiper('.swiper-container', {
         slidesPerView: 10,
         slidesPerGroup: 2,
@@ -345,7 +317,137 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
     });
+    let swiper7 = new Swiper('.swiper-container7', {
+        slidesPerView: 7,
+        loop: true,
+        spaceBetween: 20,
+        observer: true,
+        observeParents: true,
+        // Responsive breakpoints
+        breakpoints: {
 
+            // when window width is <= 320px
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            },
+            576: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 15,
+            },
+            // when window width is <= 480px
+            992: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+            },
+
+            // when window width is <= 640px
+            1200: {
+                slidesPerView: 6,
+                spaceBetween: 20,
+            },
+            1630: {
+                slidesPerView: 6,
+                spaceBetween: 20,
+            },
+
+        }
+
+    });
+    let swiperpost = new Swiper('.swiper-container-post', {
+        slidesPerView: 4,
+        loop: false,
+        spaceBetween: 20,
+
+
+    });
+    /* ДОБАВИТЬ В КОРЗИНУ
+   function showHideTabs(event, i = 0, content, contentClass, link, linkClass, classCheck) {
+       const target = event.target;
+       if (target && target.classList.contains(classCheck)) {
+
+           link.forEach((item, i) => {
+               if (target == item) {
+                   hideTabsContent(content, contentClass, link, linkClass);
+                   showTabsContent(i, content, contentClass, link, linkClass);
+               }
+           });
+       }
+
+   }
+
+   function hideTabsContent(content, contentClass, link, linkClass) {
+       content.forEach(item => {
+           item.classList.remove(contentClass);
+       });
+
+       link.forEach(item => {
+           item.classList.remove(linkClass);
+       });
+
+   }
+
+   function showTabsContent(i = 0, content, contentClass, link, linkClass) {
+       content[i].classList.add(contentClass, 'animationShow');
+       link[i].classList.add(linkClass, 'animationShow');
+   }*/
+    /*if (catalogBtn) {
+            catalogBtn.addEventListener('click', (event) => {
+                console.log(event.target);
+
+            });
+               if (!catalogContent.classList.contains('menu-catalog-active')) {
+                   catalogContent.classList.add('menu-catalog-active');
+
+               } else {
+                   catalogContent.classList.remove('menu-catalog-active');
+               }
+
+               catalogContent.addEventListener('click', (event) => {
+                   const target = event.target,
+                       submenu = document.querySelectorAll('.submenu-item'),
+                       menuLink = document.querySelectorAll('.menu-catalog__link'),
+                       menuItem = document.querySelectorAll('.menu-catalog__item'),
+                       submenuLink = document.querySelectorAll('.submenu__link'),
+                       submenuItem = document.querySelectorAll('.submenu__item'),
+                       submenuContent = document.querySelectorAll('.submenu-content');
+
+                   if (target && (target.classList.contains('menu-catalog__item') || target.classList.contains('menu-catalog__link'))) {
+                       menuItem.forEach((item, i) => {
+                           if (target == item) {
+                               hideTabsContent(submenu, "submenu-item-active", menuLink, 'menu-catalog__link-active');
+                               showTabsContent(i, submenu, "submenu-item-active", menuLink, 'menu-catalog__link-active');
+                           }
+                       });
+                       menuLink.forEach((item, i) => {
+                           if (target == item) {
+                               hideTabsContent(submenu, "submenu-item-active", menuLink, 'menu-catalog__link-active');
+                               showTabsContent(i, submenu, "submenu-item-active", menuLink, 'menu-catalog__link-active');
+                           }
+                       });
+                   }
+                   if (target && (target.classList.contains('submenu__item') || target.classList.contains('submenu__link'))) {
+                       submenuLink.forEach((item, i) => {
+                           if (target == item) {
+                               hideTabsContent(submenuContent, "submenu-content-active", submenuLink, 'submenu__link-active');
+                               showTabsContent(i, submenuContent, "submenu-content-active", submenuLink, 'submenu__link-active');
+                           }
+                       });
+                       submenuItem.forEach((item, i) => {
+                           if (target == item) {
+                               hideTabsContent(submenuContent, "submenu-content-active", submenuLink, 'submenu__link-active');
+                               showTabsContent(i, submenuContent, "submenu-content-active", submenuLink, 'submenu__link-active');
+                           }
+                       });
+
+                   }
+               });
+           });
+        }*/
     /* СЛАЙДЕРЫ
              let mySwiper = new Swiper('.swiper-container', {
                  navigation: {

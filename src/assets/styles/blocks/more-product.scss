@@ -1,0 +1,30 @@
+.more-product{
+  &__title{
+    font-weight: 600;
+    font-size: 30px;
+  }
+  &__info{
+    border-bottom: 1px solid #D8D8D8;
+    border-left: 1px solid #D8D8D8;
+    border-right: 1px solid #D8D8D8;
+    border-bottom-left-radius: $radiusBtn;
+    border-bottom-right-radius: $radiusBtn;
+    padding: 15px;
+
+  }
+  &__name{
+    font-weight: 400;
+    font-size: 12px;
+    padding-bottom: 10px;
+
+  }
+  &__price{
+    font-weight: 300;
+    font-size: 10px;
+    padding-bottom: 5px;
+  }
+  &__btn{
+    height: 40px;
+    margin-top: 15px;
+  }
+}

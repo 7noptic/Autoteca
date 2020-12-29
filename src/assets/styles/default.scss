@@ -36,19 +36,37 @@ html,body {
   line-height: 1.5;
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
+  &.lock{
+    overflow: hidden;
+  }
 }
-
+main{
+  margin-top: 140px;
+}
+@media (max-width: 991px) {
+  main{
+    margin-top: 90px;
+  }
+}
 section{
   padding: 80px 0;
   &:first-child{
     padding: 0 0 90px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   section{
     padding: 30px 0;
     &:first-child{
       padding: 0 0 30px;
+    }
+  }
+}
+@media (max-width: 575px) {
+  section{
+    padding: 15px 0;
+    &:first-child{
+      padding: 0 0 15px;
     }
   }
 }

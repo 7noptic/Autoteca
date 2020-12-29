@@ -1,0 +1,15 @@
+.post-info-moreblock{
+  display: flex;
+  &__item{
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & p{
+      text-align: center;
+      padding: 8px 2px 25px;
+      font-size: 12px;
+    }
+  }
+}

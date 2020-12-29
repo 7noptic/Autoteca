@@ -39,3 +39,11 @@
     }
   }
 }
+@media (max-width: 768px) {
+  .header-menu {
+
+    &__list {
+display: block;
+    }
+  }
+}
