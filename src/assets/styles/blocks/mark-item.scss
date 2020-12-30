@@ -51,3 +51,14 @@
     }
   }
 }
+@media screen and (max-width: 767px){
+  .mark-item{
+    &__img svg{
+      width: 70px;
+      height: 70px;
+    }
+    &__name{
+      font-size: 10px;
+    }
+  }
+}

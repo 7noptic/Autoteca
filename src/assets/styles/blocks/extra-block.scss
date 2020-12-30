@@ -1,0 +1,22 @@
+.extra-block{
+  position: absolute;
+  top: 13px;
+  right: 0;
+  padding: 0 12px;
+  background-color: $red;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 800;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &::before{
+    content: url("../img/extra.svg");
+    margin-left: -25px;
+    display: flex;align-items: center;
+    height: 30px;
+    margin-top: 6px;
+  }
+
+}

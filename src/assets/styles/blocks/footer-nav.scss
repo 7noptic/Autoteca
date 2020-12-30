@@ -5,7 +5,7 @@
     padding-bottom: 30px;
   }
   &__item{
-    padding-bottom: 13px;
+    padding-bottom: 8px;
   }
   &__link{
     font-size: 12px;
@@ -19,6 +19,39 @@
   .footer-nav{
     &__title{
       font-size: 18px;
+    }
+  }
+}
+@media screen and(max-width: 575px){
+  .footer-nav{
+    &__list{
+      display: none;
+      &.active{
+        display: block;
+      }
+    }
+    &__title{
+      position: relative;
+      &::after{
+        content: url("../img/ularrow.svg");
+        position: absolute;
+        top: -3px;
+        right: 10%;
+      }
+      &.active{
+        &::after{
+          content: url("../img/ularrow.svg");
+          position: absolute;
+          top: 0px;
+          right: 10%;
+          transform: rotate(180deg);
+        }
+      }
+    }
+    &__item{
+      &:last-child{
+        padding-bottom: 30px;
+      }
     }
   }
 }

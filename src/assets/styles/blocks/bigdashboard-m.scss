@@ -72,11 +72,22 @@
 }
 @media (max-width: 767px) {
   .bigdashboard-m{
+    width: 100%;
     padding: 20px;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 575px) {
   .bigdashboard-m{
     padding: 15px;
+    &__title{
+      font-size: 29px;
+    }
+    &__subtitle{
+      font-size: 14px;
+      width: 48%;
+    }
+    & span{
+      font-size: 60px;
+    }
   }
 }

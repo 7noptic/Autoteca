@@ -1,5 +1,5 @@
 .materials-item{
-  width: 94%;
+  width: 90%;
   margin: 0 auto 40px;
   border-radius: $radiusBtn;
   max-width: 376px;
@@ -18,7 +18,6 @@
   &__name{
     font-weight: 600;
     font-size: 16px;
-    padding-top: 19px;
     padding-bottom: 14px;
   }
   &__text{
@@ -27,5 +26,14 @@
   &__btn{
     min-height: 40px;
     width: 100%;
+  }
+}
+@media screen and (max-width: 767px){
+  .materials-item{
+    margin: 0 auto 20px;
+
+    &__btn{
+      width: 100%;
+    }
   }
 }

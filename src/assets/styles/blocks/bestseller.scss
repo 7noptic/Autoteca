@@ -19,6 +19,7 @@
   }
 
 }
+
 .nav-item{
   &:last-child .bestseller {
     &__sort{
@@ -69,6 +70,11 @@
   .bestseller__sort {
     font-size: 12px;
     margin-right: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
   }
+  /*.nav.mb-3{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }*/
 }

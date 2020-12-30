@@ -1,10 +1,13 @@
 .title {
+  display: block;
   font-size: 40px;
   font-weight: 800;
   overflow: hidden;
   text-transform: uppercase;
-  margin: 0 auto 30px;
+  margin: 0 auto 50px;
   text-align: center;
+  padding: 0 20px;
+
 
   &::before,
   &::after {
@@ -84,13 +87,24 @@
   .title,.title__left {
     break-word: break-word;
     font-size: 22px;
-
-    &:before,
-    &:after {
-
-      height: 14px;
+    margin: 0 auto 30px;
+    &::before,
+    &::after {
+      content: '';
+      display: inline-block;
+      border-bottom: none;
+      border-top: none;
+      width: 0;
+      height: 0;
     }
 
+    &::before {
+      margin-left: 0;
+    }
+
+    &::after {
+      margin-right: 0;
+    }
   }
 
 }

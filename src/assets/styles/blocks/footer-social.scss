@@ -2,10 +2,11 @@
   &__title{
     font-weight: 600;
     font-size: 14px;
+    margin-right: 15px;
   }
-  &__link{
+  &__link-t2{
     margin-left: 0px !important;
-    margin-right: 55px;
+    margin-right: 0!important;
   }
 }
 @media (max-width: 1629px) {
@@ -13,8 +14,8 @@
     &__title{
       font-size: 12px;
     }
-    &__link{
-      margin-right: 45px;
+    &__link-t2{
+      margin-right: 0;
     }
   }
 }
@@ -28,11 +29,29 @@
       width: 30px;
       height: 30px;
     }
+    &__link-t2 svg{
+      width: 15px;
+      height: 15px;
+    }
   }
 }
 @media (max-width: 991px) {
   .footer-social {
-    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between!important;
+    &__link-t2{
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-social {
+
+    &__link-t2{
+      margin-right: 0;
+    }
   }
 }
 

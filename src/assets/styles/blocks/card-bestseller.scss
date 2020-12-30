@@ -1,7 +1,10 @@
 .card-bestseller{
-  width: 94%;
+  width: 90%;
   margin: 0 auto 30px;
   max-width: 376px;
+  &__img{
+    position: relative;
+  }
   &__header{
     border-top: 1px solid #D8D8D8;
     border-left: 1px solid #D8D8D8;
@@ -56,6 +59,13 @@
   .card-bestseller{
     &__reviews{
       font-size: 12px;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .card-bestseller{
+    &__text{
+      width: 150%;
     }
   }
 }

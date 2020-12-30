@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             cataloglink1.forEach((item, i) => {
 
-                if(item == target){
+                if (item == target) {
                     target.classList.toggle('active');
                     lvl2wrap[i].classList.toggle('active');
                 }
@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if (target && target.classList.contains('menu-catalog__sublink')) {
             event.preventDefault();
             cataloglink2.forEach((item, i) => {
-                if(item == target){
+                if (item == target) {
                     lvl3wrap[i].classList.toggle('active');
                 }
             });
@@ -133,30 +133,27 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
     let swiper = new Swiper('.swiper-container', {
-        slidesPerView: 10,
-        slidesPerGroup: 2,
+        slidesPerView: "auto",
         loop: true,
         spaceBetween: 20,
         allowSlidePrev: true,
         allowSlideNext: true,
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.category-next',
+            prevEl: '.category-prev',
         },
 
     });
-    let swiper2 = new Swiper('.swiper-container2', {
+    let swiperBestseller = new Swiper('.swiper-container-bestseller', {
         slidesPerView: 4,
         loop: false,
         spaceBetween: 0,
-        //Инициализация в табах
         observer: true,
         observeParents: true,
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.bestseller-next',
+            prevEl: '.bestseller-prev',
         },
-        // Responsive breakpoints
         breakpoints: {
 
             // when window width is <= 320px
@@ -182,17 +179,18 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
     });
-    let swiper3 = new Swiper('.swiper-container3', {
+    let swiperMaterial = new Swiper('.swiper-container-material', {
         slidesPerView: 4,
         slidesPerColumn: 2,
         loop: false,
         spaceBetween: 0,
         observer: true,
         observeParents: true,
-        // Responsive breakpoints
+        navigation: {
+            nextEl: '#material-next',
+            prevEl: '#material-prev',
+        },
         breakpoints: {
-
-            // when window width is <= 320px
             0: {
                 slidesPerView: 1,
                 spaceBetween: 0,
@@ -203,7 +201,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 spaceBetween: 0,
                 slidesPerColumn: 1,
             },
-            // when window width is <= 480px
             992: {
                 slidesPerView: 3,
                 spaceBetween: 0,
@@ -213,13 +210,9 @@ window.addEventListener('DOMContentLoaded', () => {
                 slidesPerView: 4,
                 spaceBetween: 0
             },
-            // when window width is <= 640px
-
-
         }
-
     });
-    let swiper4 = new Swiper('.swiper-container4', {
+    let swiperArticles = new Swiper('.swiper-container-articles', {
         slidesPerView: 3,
         loop: false,
         spaceBetween: 0,
@@ -227,8 +220,8 @@ window.addEventListener('DOMContentLoaded', () => {
         observer: true,
         observeParents: true,
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.articles-next',
+            prevEl: '.articles-prev',
         },
         // Responsive breakpoints
         breakpoints: {
@@ -252,7 +245,40 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
     });
-    let swiper5 = new Swiper('.swiper-container5', {
+    let swiperVideoReviews = new Swiper('.swiper-container-videoreviews', {
+        slidesPerView: 3,
+        loop: false,
+        spaceBetween: 0,
+        //Инициализация в табах
+        observer: true,
+        observeParents: true,
+        navigation: {
+            nextEl: '.videoreviews-next',
+            prevEl: '.videoreviews-prev',
+        },
+        // Responsive breakpoints
+        breakpoints: {
+
+            // when window width is <= 320px
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 0
+            },
+            // when window width is <= 480px
+            992: {
+                slidesPerView: 2,
+                spaceBetween: 0
+            },
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 0
+            },
+
+
+        }
+
+    });
+    let swiperReviews = new Swiper('.swiper-container-reviews', {
         slidesPerView: 2,
         loop: false,
         spaceBetween: 0,
@@ -260,8 +286,8 @@ window.addEventListener('DOMContentLoaded', () => {
         observer: true,
         observeParents: true,
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.reviews-next',
+            prevEl: '.reviews-prev',
         },
         // Responsive breakpoints
         breakpoints: {
@@ -278,7 +304,7 @@ window.addEventListener('DOMContentLoaded', () => {
             },
         }
     });
-    let swiper6 = new Swiper('.swiper-container6', {
+    let swiperDashboard = new Swiper('.swiper-container-dashboard', {
         slidesPerView: 2,
         slidesPerColumn: 2,
         loop: false,
@@ -365,6 +391,27 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     });
+    /* списки в футере*/
+
+    let footerMenuParrent = document.querySelector('.footer'),
+        footerLink = document.querySelectorAll('.footer-nav__title'),
+        footerList = document.querySelectorAll('.footer-nav__list');
+
+    footerMenuParrent.addEventListener('click', (event) => {
+        const target = event.target;
+        if (target && target.classList.contains('footer-nav__title')) {
+            event.preventDefault();
+            footerLink.forEach((item, i) => {
+                if (item == target) {
+                    target.classList.toggle('active');
+                    footerList[i].classList.toggle('active');
+                }
+            });
+        }
+
+    });
+
+
     /* ДОБАВИТЬ В КОРЗИНУ
    function showHideTabs(event, i = 0, content, contentClass, link, linkClass, classCheck) {
        const target = event.target;

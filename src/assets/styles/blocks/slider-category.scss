@@ -22,7 +22,9 @@
   }
 }
 
-.swiper-container, .swiper-container2, .swiper-container3, .swiper-container4, .swiper-container5, .swiper-container6,.swiper-container7,.swiper-container-post {
+.swiper-container, .swiper-container2, .swiper-container3, .swiper-container4, .swiper-container5, .swiper-container6,.swiper-container7,.swiper-container-post,
+.swiper-container-dashboard,.swiper-container-bestseller,.swiper-container-material,.swiper-container-articles,.swiper-container-reviews
+,.swiper-container-videoreviews{
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -111,5 +113,8 @@
 @media (max-width: 767px) {
   .slider-category{
     padding: 20px ;
+    &__title{
+      margin-bottom: -10px;
+    }
   }
 }
