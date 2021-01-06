@@ -1,10 +1,12 @@
 .slider-category {
   padding: 40px;
-&__title{
-  font-weight: 700;
-  font-size: 20px;
-  margin-bottom: -20px;
-}
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: -20px;
+  }
+
   &__item {
     background: #F6F6F6;
     opacity: 0.6;
@@ -22,9 +24,8 @@
   }
 }
 
-.swiper-container, .swiper-container2, .swiper-container3, .swiper-container4, .swiper-container5, .swiper-container6,.swiper-container7,.swiper-container-post,
-.swiper-container-dashboard,.swiper-container-bestseller,.swiper-container-material,.swiper-container-articles,.swiper-container-reviews
-,.swiper-container-videoreviews{
+.swiper-container, .swiper-container2, .swiper-container3, .swiper-container4, .swiper-container5, .swiper-container6, .swiper-container7, .swiper-container-post,
+.swiper-container-dashboard, .swiper-container-bestseller, .swiper-container-material, .swiper-container-articles, .swiper-container-reviews, .swiper-container-videoreviews {
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -36,7 +37,20 @@
   width: 100%;
   height: 100%;
 }
-
+.swiper-pagination-dashboard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1000;
+}
+.swiper-pagination-bullet{
+  &.swiper-pagination-bullet-active{
+    background-color: $yellow;
+    width: 10px;
+    height: 10px;
+  }
+}
 .swiper-container-vertical > .swiper-wrapper {
   flex-direction: column;
 }
@@ -75,7 +89,8 @@
   -webkit-align-items: center;
   align-items: center;
   position: relative;
-  &__200p{
+
+  &__200p {
     //width: 200%;
   }
 }
@@ -93,12 +108,15 @@
   font-size: 18px;
   font-weight: 800;
 }
-.swiper-button-next{
+
+.swiper-button-next {
   right: -9px;
 }
-.swiper-button-prev{
+
+.swiper-button-prev {
   left: -9px;
 }
+
 @media (max-width: 991px) {
   .slider-category {
     padding: 40px;
@@ -110,10 +128,12 @@
     }
   }
 }
+
 @media (max-width: 767px) {
-  .slider-category{
-    padding: 20px ;
-    &__title{
+  .slider-category {
+    padding: 20px;
+
+    &__title {
       margin-bottom: -10px;
     }
   }

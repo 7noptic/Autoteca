@@ -2,7 +2,6 @@
 import jQuery from 'jquery';
 import $ from 'jquery';
 import Swiper, {Navigation, Pagination} from 'swiper';
-
 Swiper.use([Navigation, Pagination]);
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -154,6 +153,7 @@ window.addEventListener('DOMContentLoaded', () => {
             nextEl: '.bestseller-next',
             prevEl: '.bestseller-prev',
         },
+
         breakpoints: {
 
             // when window width is <= 320px
@@ -311,6 +311,9 @@ window.addEventListener('DOMContentLoaded', () => {
         spaceBetween: 0,
         observer: true,
         observeParents: true,
+        pagination: {
+            el: '.swiper-pagination-dashboard',
+        },
         // Responsive breakpoints
         breakpoints: {
 
