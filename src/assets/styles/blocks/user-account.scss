@@ -50,12 +50,12 @@
     &-b {
       font-weight: 600;
       font-size: 14px;
-      padding-bottom: 15px;
+      padding-bottom: 20px;
     }
     &-r {
       font-weight: 600;
       font-size: 14px;
-      padding-bottom: 15px;
+      padding-bottom: 20px;
       color: $red;
     }
 
@@ -96,8 +96,8 @@
 
     &__title {
       font-weight: 600;
-      font-size: 30px;
-      padding-bottom: 30px;
+      font-size: 24px;
+      padding-bottom: 20px;
       max-width: 360px;
     }
 
@@ -109,8 +109,8 @@
 
     &__listitem {
       font-weight: 300;
-      font-size: 14px;
-      margin-left: 20px;
+      font-size: 12px;
+      margin-left: 15px;
       padding-top: 15px;
 
 
@@ -118,9 +118,9 @@
         padding-top: 15px;
         display: block;
         font-weight: 600;
-        font-size: 14px;
+        font-size: 12px;
         border-bottom: 2px dashed #000;
-        margin-left: 20px;
+        margin-left: 15px;
       }
     }
 
@@ -128,18 +128,21 @@
     }
 
     &__text {
-      padding-bottom: 20px;
+      padding-bottom: 15px;
       font-weight: 300;
-      font-size: 14px;
+      font-size: 12px;
 
       &-b {
-        font-weight: 600;
+        font-size: 12px;
+        padding-bottom: 15px;
+      }
+      &-r {
         padding-bottom: 15px;
       }
 
       & span {
         font-weight: 700;
-        font-size: 20px;
+        font-size: 14px;
       }
     }
 

@@ -20,13 +20,11 @@ z-index: 4;
     }
 
     &:active, &:focus {
-      &::placeholder {
-        color: white;
-      }
 
-      background-color: $red;
 
-      color: white;
+      background-color: lighten($green, 50%);
+
+      color: black;
       font-weight: 500;
     }
   }

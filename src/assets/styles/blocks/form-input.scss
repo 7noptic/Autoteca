@@ -3,7 +3,8 @@
   padding: 8px 20px;
   transition: $transition4;
   max-height: 40px;
-
+  box-shadow: none;
+  border: none;
   &::placeholder {
     font-size: 12px;
     font-weight: 400;
@@ -12,5 +13,7 @@
 
   &:active, &:focus {
     font-weight: 500;
+    box-shadow: none;
+    border: none;
   }
 }

@@ -28,6 +28,8 @@
 
 @media (max-width: 767px) {
   .contacts-social {
+    justify-content: space-between;
+    padding-bottom: 20px;
     &__link {
       margin-left: 0px!important;
       margin-right: 5px;

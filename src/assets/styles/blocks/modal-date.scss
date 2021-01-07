@@ -1,0 +1,119 @@
+.modal-date {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  right: -100%;
+  border-left: 1px solid $yellow;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: $transition4;
+  z-index: 1000;
+
+  &__close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+  }
+
+  &.active {
+    right: 0;
+  }
+
+  &__wrapper {
+    padding: 40px 20px;
+    background-color: #fff;
+    border-radius: $radiusBtn;
+    width: 320px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+
+  &__exit {
+    font-size: 26px;
+    z-index: 1000;
+    position: absolute;
+    top: 0px;
+    right: 4px;
+    cursor: pointer;
+    transition: $transition4;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 20px;
+  }
+  &__subtitle{
+    font-weight: 600;
+    font-size: 16px;
+    padding-bottom: 10px;
+  }
+
+  &__input {
+    width: 100%;
+    border: 2px solid #000000;
+    margin-bottom: 20px;
+    position: relative;
+    &:active, &:focus, &:hover {
+      border: 2px solid #000000;
+    }
+
+  }
+  &__block{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    width: 45%;
+    padding: 10px;
+    height: 40px;
+    &-black{
+      width: 45%;
+      padding: 10px;
+      height: 40px;
+      background-color: #000;
+      color: #ffffff;
+    }
+    &-transparent{
+      background-color: transparent;
+      border: 2px dashed #000000;
+      background-image: url('../img/upload.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 100%;
+      height: 96px;
+      margin-left: 20px;
+      &:hover {
+        background-color: $green;
+        color: white;
+        -webkit-box-shadow: 0px 0px 15px 10px rgba(39, 150, 157, 0.43);
+        -moz-box-shadow: 0px 0px 15px 10px rgba(39, 150, 157, 0.43);
+        box-shadow: 0px 0px 15px 10px rgba(39, 150, 157, 0.43);
+      }
+    }
+  }
+  &__gender{
+    font-size: 14px;
+    font-weight: 300;
+    padding-left: 15px;
+  }
+
+}
+label {
+  cursor: pointer;
+  /* Style as you please, it will become the visible UI component. */
+}
+
+#upload-photo {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}

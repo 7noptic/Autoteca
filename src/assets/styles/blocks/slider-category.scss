@@ -24,8 +24,9 @@
   }
 }
 
-.swiper-container, .swiper-container2, .swiper-container3, .swiper-container4, .swiper-container5, .swiper-container6, .swiper-container7, .swiper-container-post,
-.swiper-container-dashboard, .swiper-container-bestseller, .swiper-container-material, .swiper-container-articles, .swiper-container-reviews, .swiper-container-videoreviews {
+.swiper-container,  .swiper-container7, .swiper-container-post, .swiper-container-dashboard, .swiper-container-bestseller,
+.swiper-container-material, .swiper-container-articles, .swiper-container-reviews, .swiper-container-videoreviews,
+.swiper-container-case, .swiper-container-mark, .swiper-container-mat, .swiper-container-accessory, .swiper-container-gallery, .swiper-container-more {
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -37,20 +38,23 @@
   width: 100%;
   height: 100%;
 }
-.swiper-pagination-dashboard{
+
+.swiper-pagination-dashboard, .swiper-pagination-bestseller {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   z-index: 1000;
 }
-.swiper-pagination-bullet{
-  &.swiper-pagination-bullet-active{
+
+.swiper-pagination-bullet {
+  &.swiper-pagination-bullet-active {
     background-color: $yellow;
     width: 10px;
     height: 10px;
   }
 }
+
 .swiper-container-vertical > .swiper-wrapper {
   flex-direction: column;
 }

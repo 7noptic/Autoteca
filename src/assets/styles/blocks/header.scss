@@ -107,7 +107,7 @@
     height: 15px;
     z-index: 3;
     margin-right: 20px;
-
+cursor: pointer;
     &.active {
       z-index: 500000;
       position: fixed;
@@ -202,7 +202,6 @@
   }
 
   &__rightblock {
-    padding-top: 2px;
     align-items: flex-end;
     display: flex;
     z-index: 2;
@@ -227,18 +226,27 @@
     top: 0;
     left: -100%;
     width: 100%;
-    max-width: 360px;
+    min-width: 360px;
     height: 100%;
-    background-color: $green;
-    padding: 30px 10px 20px 30px;
-    overflow: auto;
+
 
     &.active {
       left: 0;
     }
   }
+  &__wrapper{
+    position: relative;
+    background-color: $green;
+    width: 360px;
+    display: inline-block;
+    padding: 30px;
+    height: 100%;
+    overflow: auto;
+  }
 
   &__link {
+    word-break: break-all;
+    word-wrap: break-spaces;
     font-size: 10px;
     padding: 8px;
     transition: $transition4;
@@ -330,10 +338,20 @@
       justify-content: space-between;
 
     }
-
+    &__wrapper{
+      position: relative;
+      background-color: $green;
+      width: auto;
+      min-width: 360px;
+      display: inline-block;
+      padding: 0;
+      height: 100%;
+      overflow: auto;
+    }
     &__rightblock {
       flex-direction: row;
       align-items: center;
+      padding-top: 5px;
       height: auto;
       justify-content: flex-end;
     }
@@ -467,6 +485,7 @@
       overflow: initial;
     }
 
+
     &__search {
       z-index: 4;
       position: relative;
@@ -476,11 +495,11 @@
       transition: $transition4;
       overflow: auto;
     }
-
   }
-  body {
-    &.lock {
-      overflow: hidden;
-    }
+}
+
+body {
+  &.lock {
+    overflow: hidden;
   }
 }
