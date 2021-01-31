@@ -1,23 +1,21 @@
-.modal-buy {
+.modal-call {
   position: fixed;
   top: 0;
   height: 100%;
-  left: -100%;
+  right: -100%;
   overflow-x: hidden;
   overflow-y: auto;
   z-index: 1000;
-  display: none;
-  border-right: 1px solid $yellow;
-  width: 320px;
+  border-left: 1px solid $yellow;
 
-  &-active {
-    left: 0;
-    display: block;
 
-    &::before {
+  &.active {
+    right: 0;
+    &::before{
       content: '';
       position: fixed;
       top: 0;
+      left: 0;
       right: 0;
       bottom: 0;
       background: rgba(0, 0, 0, 0.5);
@@ -29,51 +27,24 @@
 
   &__wrapper {
     z-index: 1001;
-    padding: 30px;
+    padding: 50px 30px 50px 20px;
     background-color: #fff;
     border-radius: $radiusBtn;
     width: 100%;
+    max-width: 320px;
     height: 100%;
     overflow: auto;
 
   }
 
-  &__title {
-    font-weight: 700;
-    font-size: 20px;
-    padding-bottom: 20px;
-  }
 
-  &__text {
-    font-weight: 300;
-    font-size: 14px;
-    padding-bottom: 20px;
-  }
-
-  &__form {
-    flex-direction: column;
-  }
-
-  &__input {
-    width: 100%;
-    text-align: center;
-    border: 2px solid #000000;
-    margin-bottom: 20px;
-  }
-
-  &__agreement {
-    margin-top: 15px;
-    font-size: 10px;
-    font-weight: 300;
-    text-align: center;
-  }
 
 
   &__exit {
     font-size: 26px;
     position: absolute;
     top: 5px;
-    left: 5px;
+    right: 5px;
     cursor: pointer;
 
     & path, & rect {
@@ -88,9 +59,6 @@
     }
   }
 
-  &__btn {
-    width: 100%;
-    padding: 10px;
-  }
+
 
 }

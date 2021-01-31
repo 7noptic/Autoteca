@@ -2,8 +2,9 @@
   width: 90%;
   margin: 0 auto;
   padding-bottom: 32px;
-cursor: pointer;
+  cursor: pointer;
   display: block;
+
   &__img {
     padding-bottom: 15px;
   }
@@ -29,6 +30,7 @@ cursor: pointer;
     min-height: 40px;
     padding: 6px 36px;
     width: 30%;
+    min-width: 160px;
   }
 
   &__info {

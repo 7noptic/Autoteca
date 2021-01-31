@@ -7,7 +7,9 @@
   margin: 0 auto 50px;
   text-align: center;
   padding: 0 20px;
-
+&::content{
+  padding: 0 40px;
+}
 
   &::before,
   &::after {
@@ -23,10 +25,12 @@
 
   &::before {
     margin-left: -100%;
+    margin-right: 35px;
   }
 
   &::after {
     margin-right: -100%;
+    margin-left: 35px;
   }
 }
 .title__left {
@@ -65,7 +69,18 @@
 
   }
 }
+@media screen and(max-width: 1024px) {
+  .title.title__left {
 
+    &:before,
+    &:after {
+
+      display: none;
+    }
+
+  }
+
+}
 
 @media screen and(max-width: 991px) {
   .title.title__left {

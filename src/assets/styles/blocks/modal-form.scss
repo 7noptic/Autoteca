@@ -1,0 +1,53 @@
+.modal-form {
+  &__btn {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-transparent{
+      background-color: #fff;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 17px;
+      border: 2px dashed rgba(0, 0, 0, 0.5);
+      color: black;
+      font-size: 12px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    &:hover, &:active, &:focus{
+      border: 1px solid rgba(0, 0, 0, 0.5);
+    }
+  }
+  &__upload{
+    display: none;
+  }
+
+  &__area {
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    height: 140px;
+    &:hover, &:active, &:focus{
+      border: 1px solid rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  &__agreement {
+    margin-top: 15px;
+    font-size: 10px;
+    font-weight: 300;
+    text-align: center;
+  }
+}

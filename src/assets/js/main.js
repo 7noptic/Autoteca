@@ -44,7 +44,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if ($('.header__burger')) {
             $('.header__burger').click(function (event) {
                 event.preventDefault()
-                $('.header__burger,.header__nav').toggleClass('active');
+                $('.header__burger,.header__burger-fixed,.header__nav').toggleClass('active');
                 lvl2wrap.forEach(item => {
                     item.classList.remove('active');
                 });
@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         if ($('.js-catalog-btn')) {
             $('.js-catalog-btn').click(function (event) {
-                $('.header__burger-catalog,.header__catalog').toggleClass('active');
+                $('.header__burger-catalog,.header__burger-fixed,.header__catalog').toggleClass('active');
                 $('.header__burger,.header__nav').toggleClass('active');
                 lvl2wrap.forEach(item => {
                     item.classList.remove('active');
@@ -124,18 +124,39 @@ window.addEventListener('DOMContentLoaded', () => {
             closeBasket = document.querySelector('.modal-basket__close'),
             exitBasket = document.querySelectorAll('.modal-basket__exit'),
             viewIcon = document.querySelectorAll('.password-control'),
-            passwordInput = document.querySelectorAll('.modal-password__input');
+            passwordInput = document.querySelectorAll('.modal-password__input'),
+            modalCall = document.querySelector('.modal-call'),
+            exitCall = document.querySelector('.modal-call__exit'),
+            modalRegion = document.querySelector('.modal-region'),
+            exitRegion = document.querySelector('.modal-region__exit');
 
         let basketItem = document.querySelectorAll('.modal-basket__item');
         /* открытие модалок */
-        if (target && target.classList.contains('js-buy-one-click')) {
-            event.preventDefault()
 
-            openModal(modalBuy, 'modal-buy-active');
-        } else if (target && target.classList.contains('js-add-to-basket')) {
-            event.preventDefault()
+        if (modalCall) {
+            if (target && target.classList.contains('js-call')) {
+                event.preventDefault();
+                openModal(modalCall, 'active');
+            }
+        }
+        if (modalRegion) {
 
-            openModal(modalBasket, 'modal-basket-active');
+            if (target && target.classList.contains('js-region')) {
+                event.preventDefault();
+                openModal(modalRegion, 'active');
+            }
+        }
+        if (modalBasket){
+            if (target && target.classList.contains('js-add-to-basket')) {
+                event.preventDefault()
+                openModal(modalBasket, 'modal-basket-active');
+            }
+        }
+        if (modalBuy){
+            if (target && target.classList.contains('js-buy-one-click')) {
+                event.preventDefault()
+                openModal(modalBuy, 'modal-buy-active');
+            }
         }
         if (modalEmail) {
             if (target && target.classList.contains('js-useremail')) {
@@ -194,6 +215,20 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         }
         /* закрытие модалок */
+        if (exitCall) {
+            exitCall.addEventListener('click', () => {
+                event.preventDefault()
+                closeModal(modalCall, 'active');
+            });
+        }
+
+        if (exitRegion) {
+            exitRegion.addEventListener('click', () => {
+                event.preventDefault()
+                closeModal(modalRegion, 'active');
+            });
+        }
+
         if (exitBuy) {
             exitBuy.addEventListener('click', () => {
                 event.preventDefault()
@@ -301,13 +336,15 @@ window.addEventListener('DOMContentLoaded', () => {
         observeParents: true,
         pagination: {
             el: '.swiper-pagination-bestseller',
+            clickable: true,
         },
 
 
         breakpoints: {
             0: {
                 slidesPerView: 1,
-                spaceBetween: 0
+                spaceBetween: 0,
+
             },
             768: {
                 slidesPerView: 2,
@@ -332,9 +369,9 @@ window.addEventListener('DOMContentLoaded', () => {
         spaceBetween: 0,
         observer: true,
         observeParents: true,
-        navigation: {
-            nextEl: '#material-next',
-            prevEl: '#material-prev',
+        pagination: {
+            el: '.swiper-pagination-material',
+            clickable: true,
         },
         breakpoints: {
             0: {
@@ -365,9 +402,9 @@ window.addEventListener('DOMContentLoaded', () => {
         //Инициализация в табах
         observer: true,
         observeParents: true,
-        navigation: {
-            nextEl: '.articles-next',
-            prevEl: '.articles-prev',
+        pagination: {
+            el: '.swiper-pagination-articles',
+            clickable: true,
         },
         // Responsive breakpoints
         breakpoints: {
@@ -459,6 +496,7 @@ window.addEventListener('DOMContentLoaded', () => {
         observeParents: true,
         pagination: {
             el: '.swiper-pagination-dashboard',
+            clickable: true,
         },
         // Responsive breakpoints
         breakpoints: {

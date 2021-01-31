@@ -21,7 +21,7 @@
       <div class="row justify-content-between justify-content-lg-center align-items-center">
 
         <div class="col-7 col-lg-2 header__leftblock">
-          <div class="icon-text d-none d-lg-flex" style="z-index: 4;">
+          <div class="icon-text d-none d-lg-flex header__region js-region" style="z-index: 4;">
             <div class="icon-text__img">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4.88163 3.33141C7.65287 0.560167 12.146 0.560167 14.9172 3.33141C17.6884 6.10266 17.6884 10.5957 14.9172 13.367L9.89941 18.3848L4.88163 13.367C2.11038 10.5957 2.11038 6.10266 4.88163 3.33141Z" fill="black" stroke="black" stroke-width="2" />
@@ -35,8 +35,9 @@
           <div class="header__burger" style="z-index: 5;">
             <span></span>
           </div>
-          <a href="index.html" class="header__logo">
-            <svg class="mt-lg-2" width="183" height="44" viewBox="0 0 183 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div class="header__burger-fixed"></div>
+          <a href="index.html" class="header__logo mt-lg-3">
+            <svg width="183" height="44" viewBox="0 0 183 44" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M11.577 28.4238C11.1789 28.2784 10.7785 28.1352 10.3916 27.963V21.924C10.3916 21.924 11.5099 23.3912 11.5099 24.9457C11.5099 25.364 11.5345 26.3548 11.5524 27.5268C11.5681 27.8176 11.5726 28.1173 11.577 28.4238Z" fill="#D93732" />
               <path d="M11.9439 13.82C11.5909 13.9778 11.2625 14.1856 10.9688 14.437C11.4344 13.7038 12.1146 13.1317 12.9169 12.7983C12.9351 12.9168 12.9212 13.038 12.8766 13.1493C12.7223 13.516 12.3018 13.6613 11.9439 13.82Z" fill="#D93732" />
               <path d="M18.9062 13.1493C18.8628 13.0384 18.849 12.9183 18.8659 12.8005C19.6684 13.1326 20.3482 13.7051 20.8118 14.4392C20.5195 14.1864 20.1917 13.9778 19.8389 13.8199C19.481 13.6612 19.056 13.5159 18.9062 13.1493Z" fill="#D93732" />
@@ -134,6 +135,10 @@
             <nav class="header__catalog">
               <div class="header__wrapper">
                 <ul class="menu-catalog__list">
+                  <li class="menu-catalog__title">
+                    Каталог
+                  </li>
+
                   <li class="menu-catalog__item">
                     <a href="#" class="menu-catalog__link">
                       <span>
@@ -1576,7 +1581,7 @@
               <a href="tel:+79775107529" class="header__number">
                 +7 977 510 75 29
               </a>
-              <a href="#" class="header__order">
+              <a href="#" class="header__order js-call">
                 ЗАКАЗАТЬ ЗВОНОК
               </a>
             </div>
@@ -1778,7 +1783,7 @@
     <section class="bestseller">
 
       <div class="container">
-        <ul class="nav mb-0 mb-lg-3" role="tablist">
+        <ul class="nav" role="tablist">
           <li class="nav-item">
             <a class="nav-link bestseller__sort active" id="pills-hit-tab" data-toggle="pill" href="#pills-hit" role="tab" aria-selected="true">ХИТЫ ПРОДАЖ</a>
           </li>
@@ -1997,6 +2002,7 @@
           <div class="tab-pane fade show active" id="pills-hit" role="tabpanel">
             <div class="row">
               <div class="swiper-container-bestseller">
+
                 <div class="swiper-wrapper">
 
                   <div class="swiper-slide">
@@ -2309,30 +2315,7 @@
 
                 </div>
                 <div class="swiper-pagination-bestseller"></div>
-                <!--
-                            <div class="swiper-button-next bestseller-next">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0)">
-                                        <path d="M5.13469 16L13.1348 8L5.13469 -6.99389e-07L2.86528 2.26956L8.5958 8L2.86528 13.7304L5.13469 16Z"
-                                              fill="black"/>
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0">
-                                            <rect width="16" height="16" fill="white"
-                                                  transform="translate(16 16) rotate(-180)"/>
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </div>
-                            <div class="swiper-button-prev bestseller-prev">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10.8653 0L2.86523 8L10.8653 16L13.1347 13.7304L7.4042 8L13.1347 2.26956L10.8653 0Z"
-                                          fill="black"/>
-                                </svg>
-                            </div>
-                            -->
+
               </div>
             </div>
           </div>
@@ -2650,23 +2633,7 @@
                   </div>
 
                 </div>
-                <div class="swiper-button-next bestseller-next">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0)">
-                      <path d="M5.13469 16L13.1348 8L5.13469 -6.99389e-07L2.86528 2.26956L8.5958 8L2.86528 13.7304L5.13469 16Z" fill="black" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0">
-                        <rect width="16" height="16" fill="white" transform="translate(16 16) rotate(-180)" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </div>
-                <div class="swiper-button-prev bestseller-prev">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.8653 0L2.86523 8L10.8653 16L13.1347 13.7304L7.4042 8L13.1347 2.26956L10.8653 0Z" fill="black" />
-                  </svg>
-                </div>
+                <div class="swiper-pagination-bestseller"></div>
               </div>
             </div>
           </div>
@@ -2984,23 +2951,7 @@
                   </div>
 
                 </div>
-                <div class="swiper-button-next bestseller-next">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0)">
-                      <path d="M5.13469 16L13.1348 8L5.13469 -6.99389e-07L2.86528 2.26956L8.5958 8L2.86528 13.7304L5.13469 16Z" fill="black" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0">
-                        <rect width="16" height="16" fill="white" transform="translate(16 16) rotate(-180)" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </div>
-                <div class="swiper-button-prev bestseller-prev">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.8653 0L2.86523 8L10.8653 16L13.1347 13.7304L7.4042 8L13.1347 2.26956L10.8653 0Z" fill="black" />
-                  </svg>
-                </div>
+                <div class="swiper-pagination-bestseller"></div>
               </div>
             </div>
           </div>
@@ -3318,23 +3269,7 @@
                   </div>
 
                 </div>
-                <div class="swiper-button-next bestseller-next">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0)">
-                      <path d="M5.13469 16L13.1348 8L5.13469 -6.99389e-07L2.86528 2.26956L8.5958 8L2.86528 13.7304L5.13469 16Z" fill="black" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0">
-                        <rect width="16" height="16" fill="white" transform="translate(16 16) rotate(-180)" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </div>
-                <div class="swiper-button-prev bestseller-prev">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.8653 0L2.86523 8L10.8653 16L13.1347 13.7304L7.4042 8L13.1347 2.26956L10.8653 0Z" fill="black" />
-                  </svg>
-                </div>
+                <div class="swiper-pagination-bestseller"></div>
               </div>
             </div>
           </div>
@@ -3652,23 +3587,7 @@
                   </div>
 
                 </div>
-                <div class="swiper-button-next bestseller-next">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0)">
-                      <path d="M5.13469 16L13.1348 8L5.13469 -6.99389e-07L2.86528 2.26956L8.5958 8L2.86528 13.7304L5.13469 16Z" fill="black" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0">
-                        <rect width="16" height="16" fill="white" transform="translate(16 16) rotate(-180)" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </div>
-                <div class="swiper-button-prev bestseller-prev">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.8653 0L2.86523 8L10.8653 16L13.1347 13.7304L7.4042 8L13.1347 2.26956L10.8653 0Z" fill="black" />
-                  </svg>
-                </div>
+                <div class="swiper-pagination-bestseller"></div>
               </div>
             </div>
           </div>
@@ -4996,23 +4915,7 @@
               </div>
 
             </div>
-            <div id="material-next" class="swiper-button-next">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0)">
-                  <path d="M5.13469 16L13.1348 8L5.13469 -6.99389e-07L2.86528 2.26956L8.5958 8L2.86528 13.7304L5.13469 16Z" fill="black" />
-                </g>
-                <defs>
-                  <clipPath id="clip0">
-                    <rect width="16" height="16" fill="white" transform="translate(16 16) rotate(-180)" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </div>
-            <div id="material-prev" class="swiper-button-prev">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10.8653 0L2.86523 8L10.8653 16L13.1347 13.7304L7.4042 8L13.1347 2.26956L10.8653 0Z" fill="black" />
-              </svg>
-            </div>
+            <div class="swiper-pagination-material"></div>
           </div>
         </div>
 
@@ -5131,23 +5034,7 @@
                   </div>
 
                 </div>
-                <div class="swiper-button-next articles-next">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0)">
-                      <path d="M5.13469 16L13.1348 8L5.13469 -6.99389e-07L2.86528 2.26956L8.5958 8L2.86528 13.7304L5.13469 16Z" fill="black" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0">
-                        <rect width="16" height="16" fill="white" transform="translate(16 16) rotate(-180)" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </div>
-                <div class="swiper-button-prev articles-prev">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.8653 0L2.86523 8L10.8653 16L13.1347 13.7304L7.4042 8L13.1347 2.26956L10.8653 0Z" fill="black" />
-                  </svg>
-                </div>
+                <div class="swiper-pagination-articles"></div>
               </div>
             </div>
           </div>
@@ -5238,23 +5125,7 @@
                   </div>
 
                 </div>
-                <div class="swiper-button-next articles-next">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0)">
-                      <path d="M5.13469 16L13.1348 8L5.13469 -6.99389e-07L2.86528 2.26956L8.5958 8L2.86528 13.7304L5.13469 16Z" fill="black" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0">
-                        <rect width="16" height="16" fill="white" transform="translate(16 16) rotate(-180)" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </div>
-                <div class="swiper-button-prev articles-prev">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.8653 0L2.86523 8L10.8653 16L13.1347 13.7304L7.4042 8L13.1347 2.26956L10.8653 0Z" fill="black" />
-                  </svg>
-                </div>
+                <div class="swiper-pagination-articles"></div>
               </div>
             </div>
           </div>
@@ -5345,23 +5216,7 @@
                   </div>
 
                 </div>
-                <div class="swiper-button-next articles-next">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0)">
-                      <path d="M5.13469 16L13.1348 8L5.13469 -6.99389e-07L2.86528 2.26956L8.5958 8L2.86528 13.7304L5.13469 16Z" fill="black" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0">
-                        <rect width="16" height="16" fill="white" transform="translate(16 16) rotate(-180)" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </div>
-                <div class="swiper-button-prev articles-prev">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.8653 0L2.86523 8L10.8653 16L13.1347 13.7304L7.4042 8L13.1347 2.26956L10.8653 0Z" fill="black" />
-                  </svg>
-                </div>
+                <div class="swiper-pagination-articles"></div>
               </div>
             </div>
           </div>
@@ -5606,13 +5461,13 @@
                     <div class="reviews-item">
                       <div class="row">
 
-                        <div class="сol-12 col-sm-3">
+                        <div class="сol-12 col-md-3">
                           <div class="reviews-item__img">
                             <img src="img/review-min.jpg" alt="review">
                           </div>
                         </div>
 
-                        <div class="col-12 col-sm-9">
+                        <div class="col-12 col-md-9">
                           <header class="reviews-item__header">
                             <div class="row">
                               <div class="col-6">
@@ -5674,13 +5529,13 @@
                     <div class="reviews-item">
                       <div class="row">
 
-                        <div class="сol-12 col-sm-3">
+                        <div class="сol-12 col-md-3">
                           <div class="reviews-item__img">
                             <img src="img/review-min.jpg" alt="review">
                           </div>
                         </div>
 
-                        <div class="col-12 col-sm-9">
+                        <div class="col-12 col-md-9">
                           <header class="reviews-item__header">
                             <div class="row">
                               <div class="col-6">
@@ -5742,13 +5597,13 @@
                     <div class="reviews-item">
                       <div class="row">
 
-                        <div class="сol-12 col-sm-3">
+                        <div class="сol-12 col-md-3">
                           <div class="reviews-item__img">
                             <img src="img/review-min.jpg" alt="review">
                           </div>
                         </div>
 
-                        <div class="col-12 col-sm-9">
+                        <div class="col-12 col-md-9">
                           <header class="reviews-item__header">
                             <div class="row">
                               <div class="col-6">
@@ -6046,7 +5901,7 @@
               <input type="text" class="form-control form-input form-order__input footer__input" name="your-name" id="exampleInputPassword1" placeholder="Имя">
               <input type="email" class="form-control form-input form-order__input footer__input" name="your-email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
 
-              <button type="submit" class="btn form-order__btn footer-form__btn">Подписаться</button>
+              <a href="#" class="btn form-order__btn footer-form__btn">Подписаться</a>
               <p class="footer__agreement">
                 Я согласен условиями предоставления услуг и обработкой моих персональных данных при
                 нажатии
@@ -6142,6 +5997,7 @@
           </div>
         </div>
       </div>
+
       <div class="footer__row">
         <div class="row">
           <div class="col-12 col-sm-6 col-lg-3">
@@ -6318,6 +6174,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </footer>
   <!-- MODAL -->
@@ -6482,6 +6339,101 @@
             <rect x="1" y="1.005" width="18" height="18.0099" rx="3" stroke="black" stroke-width="2" />
           </svg>
         </div>
+      </div>
+    </div>
+  </aside>
+
+  <aside class="modal-call">
+    <div class="modal-call__wrapper">
+      <form action="post" class="modal-form">
+        <input type="text" class="form-control form-input modal-form__input form-input" placeholder="Имя">
+        <input type="tel" pattern="+[0-9]{1} ([0-9]{3}) [0-9]{3} - [0-9]{4}" class="form-control form-input form-input modal-form__input" placeholder="+7  (       )       -        -">
+        <textarea name="textarea" cols="30" rows="10" class="form-control modal-form__area" placeholder="Ваш вопрос"></textarea>
+        <a href="#" class="btn modal-form__btn">заказать звонок</a>
+        <div class="agreement modal-form__agreement">
+          Отправляя данную форму, я соглашаюсь с политикой обработки персональных данных
+        </div>
+
+      </form>
+      <div class="modal-call__exit">
+        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.9336 6.00793L8.93359 10.0099L12.9336 14.0119L14.0683 12.8766L11.2031 10.0099L14.0683 7.14328L12.9336 6.00793Z" fill="black" />
+          <path d="M7.13277 6.00793L11.1328 10.0099L7.13277 14.0119L5.99807 12.8766L8.86333 10.0099L5.99807 7.14328L7.13277 6.00793Z" fill="black" />
+          <rect x="1" y="1.005" width="18" height="18.0099" rx="3" stroke="black" stroke-width="2" />
+        </svg>
+      </div>
+    </div>
+  </aside>
+
+  <aside class="modal-region">
+    <div class="modal-region__wrapper">
+      <div class="modal-region__row">
+        <p class="modal-region__city">
+          Ваш город: Санкт-Петербург?
+        </p>
+        <a href="#" class="btn modal-region__btn">
+          да
+        </a>
+
+      </div>
+      <div class="modal-region__row">
+        <form action="post" method="post" class="form-search modal-region__form">
+          <input type="search" class="form-control form-input form-search__search modal-region__search" placeholder="Найди здесь">
+        </form>
+        <a href="#" class="btn modal-region__btn">
+          <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="9.5" cy="9" r="8" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M19.5 19L15.15 14.65" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+
+        </a>
+      </div>
+      <ul class="modal-region__list">
+        <li><a href="#" class="modal-region__link">Москва</a></li>
+        <li><a href="#" class="modal-region__link">Санкт-Петербург</a></li>
+        <li><a href="#" class="modal-region__link">Дубай</a></li>
+        <li><a href="#" class="modal-region__link">Токио</a></li>
+        <li><a href="#" class="modal-region__link">Лондон</a></li>
+        <li><a href="#" class="modal-region__link">Рим</a></li>
+        <li><a href="#" class="modal-region__link">Москва</a></li>
+        <li><a href="#" class="modal-region__link">Санкт-Петербург</a></li>
+        <li><a href="#" class="modal-region__link">Дубай</a></li>
+        <li><a href="#" class="modal-region__link">Токио</a></li>
+        <li><a href="#" class="modal-region__link">Лондон</a></li>
+        <li><a href="#" class="modal-region__link">Рим</a></li>
+        <li><a href="#" class="modal-region__link">Москва</a></li>
+        <li><a href="#" class="modal-region__link">Санкт-Петербург</a></li>
+        <li><a href="#" class="modal-region__link">Дубай</a></li>
+        <li><a href="#" class="modal-region__link">Токио</a></li>
+        <li><a href="#" class="modal-region__link">Лондон</a></li>
+        <li><a href="#" class="modal-region__link">Рим</a></li>
+        <li><a href="#" class="modal-region__link">Москва</a></li>
+        <li><a href="#" class="modal-region__link">Санкт-Петербург</a></li>
+        <li><a href="#" class="modal-region__link">Дубай</a></li>
+        <li><a href="#" class="modal-region__link">Токио</a></li>
+        <li><a href="#" class="modal-region__link">Лондон</a></li>
+        <li><a href="#" class="modal-region__link">Рим</a></li>
+        <li><a href="#" class="modal-region__link">Москва</a></li>
+        <li><a href="#" class="modal-region__link">Санкт-Петербург</a></li>
+        <li><a href="#" class="modal-region__link">Дубай</a></li>
+        <li><a href="#" class="modal-region__link">Токио</a></li>
+        <li><a href="#" class="modal-region__link">Лондон</a></li>
+        <li><a href="#" class="modal-region__link">Рим</a></li>
+        <li><a href="#" class="modal-region__link">Москва</a></li>
+        <li><a href="#" class="modal-region__link">Санкт-Петербург</a></li>
+        <li><a href="#" class="modal-region__link">Дубай</a></li>
+        <li><a href="#" class="modal-region__link">Токио</a></li>
+        <li><a href="#" class="modal-region__link">Лондон</a></li>
+        <li><a href="#" class="modal-region__link">Рим</a></li>
+      </ul>
+
+      <div class="modal-region__exit">
+
+        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.9336 6.00793L8.93359 10.0099L12.9336 14.0119L14.0683 12.8766L11.2031 10.0099L14.0683 7.14328L12.9336 6.00793Z" fill="black" />
+          <path d="M7.13277 6.00793L11.1328 10.0099L7.13277 14.0119L5.99807 12.8766L8.86333 10.0099L5.99807 7.14328L7.13277 6.00793Z" fill="black" />
+          <rect x="1" y="1.005" width="18" height="18.0099" rx="3" stroke="black" stroke-width="2" />
+        </svg>
       </div>
     </div>
   </aside>

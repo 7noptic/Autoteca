@@ -2,8 +2,8 @@
   position: fixed;
   top: 0;
   height: 100%;
-  right: -100%;
-  border-left: 1px solid $yellow;
+  left: -100%;
+  border-right: 1px solid $yellow;
   overflow-x: hidden;
   overflow-y: auto;
   transition: $transition4;
@@ -17,10 +17,22 @@
   }
 
   &.active {
-    right: 0;
+    left: 0;
+    &::before{
+      content: '';
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      width: calc(100vw - 320px);
+      height: 100%;
+    }
   }
 
   &__wrapper {
+    z-index: 1001;
     padding: 40px 20px;
     background-color: #fff;
     border-radius: $radiusBtn;
@@ -88,9 +100,9 @@
       background-image: url('../img/upload.svg');
       background-repeat: no-repeat;
       background-position: center center;
-      width: 100%;
+      width: 90%;
       height: 96px;
-      margin-left: 20px;
+      margin-left: 10px;
       &:hover {
         background-color: $green;
         color: white;

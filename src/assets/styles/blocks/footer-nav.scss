@@ -22,6 +22,18 @@
     }
   }
 }
+@media screen and(max-width: 767px){
+  .footer-nav{
+    &__title{
+      padding-bottom: 20px;
+    }
+    &__item{
+      &:last-child{
+        padding-bottom: 30px;
+      }
+    }
+  }
+}
 @media screen and(max-width: 575px){
   .footer-nav{
     &__list{
@@ -36,14 +48,14 @@
         content: url("../img/ularrow.svg");
         position: absolute;
         top: -3px;
-        right: 10%;
+        right: 0;
       }
       &.active{
         &::after{
           content: url("../img/ularrow.svg");
           position: absolute;
           top: 0px;
-          right: 10%;
+          right: 0;
           transform: rotate(180deg);
         }
       }

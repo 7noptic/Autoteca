@@ -85,6 +85,23 @@
     z-index: 2;
   }
 
+  &__region {
+    position: relative;
+    cursor: pointer;
+    &::before{
+      content: '';
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+    }
+  }
+
   &__logo {
     z-index: 3;
   }
@@ -106,26 +123,31 @@
     width: 15px;
     height: 15px;
     z-index: 3;
-    margin-right: 20px;
-cursor: pointer;
+    margin-right: 5px;
+    cursor: pointer;
+
     &.active {
       z-index: 500000;
       position: fixed;
       top: 20px;
       left: 5px;
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border-radius: 4px;
 
       &::before, &::after {
-        width: 180%;
+        width: 100%;
       }
 
       &::before {
         transform: rotate(45deg);
-        top: 6px;
+        top: 8px;
       }
 
       &::after {
         transform: rotate(-45deg);
-        bottom: 6px;
+        bottom: 9px;
       }
 
       & span {
@@ -234,14 +256,16 @@ cursor: pointer;
       left: 0;
     }
   }
-  &__wrapper{
+
+  &__wrapper {
     position: relative;
     background-color: $green;
     width: 360px;
     display: inline-block;
-    padding: 30px;
+    padding: 20px 30px;
     height: 100%;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   &__link {
@@ -324,6 +348,13 @@ cursor: pointer;
 
 @media (max-width: 1200px) {
   .header {
+
+      &__rightblock,&__leftblock{
+      height: 70px;
+    }
+    &__block{
+      height: 74px;
+    }
     &__link {
       font-size: 7px;
     }
@@ -332,13 +363,16 @@ cursor: pointer;
 
 @media (max-width: 991px) {
   .header {
+    padding: 8.5px 0;
+
     &__leftblock {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
 
     }
-    &__wrapper{
+
+    &__wrapper {
       position: relative;
       background-color: $green;
       width: auto;
@@ -346,8 +380,10 @@ cursor: pointer;
       display: inline-block;
       padding: 0;
       height: 100%;
-      overflow: auto;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
+
     &__rightblock {
       flex-direction: row;
       align-items: center;
@@ -401,13 +437,27 @@ cursor: pointer;
       z-index: 3;
       margin-right: 20px;
 
+      &-fixed {
+        display: none;
+        width: 40px;
+
+        &.active {
+          display: block;
+        }
+      }
+
       &.active {
+
         position: fixed;
         top: 20px;
         left: 5px;
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border-radius: $radiusBtn;
 
         &::before, &::after {
-          width: 170%;
+          width: 100%;
         }
 
         &::before {
@@ -463,9 +513,10 @@ cursor: pointer;
       max-width: 360px;
       height: 100%;
       background-color: $green;
-      padding: 30px 10px 20px 40px;
+      padding: 16px 10px 20px 40px;
       transition: $transition4;
-      overflow: auto;
+      overflow-x: hidden;
+      overflow-y: auto;
       display: flex;
       flex-direction: column;
 
@@ -493,7 +544,8 @@ cursor: pointer;
       height: auto;
       padding: 0 0 0 0;
       transition: $transition4;
-      overflow: auto;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
   }
 }
